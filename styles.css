@@ -1,0 +1,511 @@
+/*
+    GMBF GROUP WEBSITE STYLESHEET
+    File: styles.css
+    FINAL Consolidated Styles with Professional Partner and Contact Sections.
+*/
+
+/* === 1. VARIABLES & BASE STYLES === */
+:root {
+    --color-primary: #333;      /* Dark Gray for Text */
+    --color-secondary: #4CAF50; /* Green Accent (Logo Green) */
+    --color-accent: #E53935;    /* Red Accent (Logo Red) */
+    --color-light: #f9f9f9;     /* Light Background */
+    --color-white: #ffffff;
+    --font-stack: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-stack);
+    margin: 0;
+    padding: 0;
+    color: var(--color-primary);
+    background-color: var(--color-white);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 2em;
+    color: var(--color-accent);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.content-section {
+    padding: 80px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* === 2. HEADER & NAVIGATION === */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    background-color: var(--color-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-logo {
+    height: 40px; /* Adjust logo size */
+    width: auto;
+    vertical-align: middle;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-primary);
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-secondary);
+}
+
+.cta-button {
+    background-color: var(--color-secondary);
+    color: var(--color-white) !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #388E3C;
+}
+
+/* === 3. HERO SECTION WITH JAVASCRIPT SLIDESHOW === */
+
+.hero-container {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+.slideshow-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.slide {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: var(--color-white);
+    padding: 100px 10%;
+    z-index: 10;
+}
+
+.hero-content h1, .hero-content h2, .hero-content p {
+    color: var(--color-white);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+.hero-content h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.tagline {
+    color: var(--color-secondary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 0;
+}
+
+.main-cta {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    z-index: 2;
+}
+
+.main-cta:hover {
+    background-color: #C62828;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 15;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.slide-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 15;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: var(--color-secondary);
+}
+
+/* === 4. ABOUT SECTION STATS === */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.stats div {
+    padding: 20px;
+    background-color: var(--color-light);
+    border-radius: 8px;
+    flex-grow: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stats span {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--color-secondary);
+    display: block;
+}
+
+/* === 5. SERVICES SECTION (Grid Layout) === */
+.services-grid {
+    background-color: var(--color-light);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.service-card {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border-top: 5px solid var(--color-secondary);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-top-color: var(--color-accent);
+}
+
+.service-card h4 {
+    color: var(--color-primary);
+    margin-top: 0;
+}
+
+/* === 6. KEY CLIENTS & PARTNERS === */
+
+.partners-section {
+    background-color: var(--color-light);
+}
+
+.partners-grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.partner-card {
+    padding: 30px;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.partner-card h4 {
+    text-align: center;
+    font-size: 1.4em;
+    color: var(--color-primary);
+    margin-bottom: 25px;
+}
+
+.client-list-card {
+    border-left: 5px solid var(--color-accent);
+}
+
+.payment-list-card {
+    border-left: 5px solid var(--color-secondary);
+}
+
+.logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.logo-badge {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--color-light);
+    color: var(--color-primary);
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.logo-badge:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border-color: var(--color-secondary);
+    cursor: default;
+}
+
+.payment-badge {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 700;
+    border-color: var(--color-primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.payment-badge:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* === 7. CONTACT SECTION (UPDATED PROFESSIONAL LOOK) === */
+
+.contact-section-full {
+    background-color: var(--color-light);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Contact details wider than locations */
+    gap: 30px;
+    text-align: left;
+}
+
+.contact-card {
+    padding: 40px;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card h4 {
+    text-align: center;
+    font-size: 1.6em;
+    color: var(--color-accent); /* Red heading */
+    margin-bottom: 30px;
+}
+
+.primary-contact {
+    border-top: 5px solid var(--color-secondary); /* Green highlight */
+    padding-bottom: 50px;
+}
+
+.primary-contact p:first-of-type {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.contact-detail i {
+    font-size: 1.8em;
+    margin-right: 15px;
+    color: var(--color-secondary); /* Green icons */
+}
+
+.contact-detail a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-detail a:hover {
+    color: var(--color-accent);
+}
+
+.form-cta {
+    display: block;
+    width: 80%;
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+/* Location Card Styles */
+.location-card {
+    text-align: center;
+    background-color: var(--color-primary); /* Dark background for distinction */
+    color: var(--color-white);
+}
+
+.location-card h4 {
+    color: var(--color-white);
+}
+
+.location-detail {
+    margin-bottom: 30px;
+    padding: 15px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+}
+.location-detail:last-child {
+    border-bottom: none;
+}
+.location-detail h5 {
+    color: var(--color-secondary);
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+.location-detail p {
+    margin: 0;
+    font-size: 1em;
+    color: var(--color-light);
+}
+
+/* === 8. FOOTER === */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    font-size: 0.9em;
+}
+
+/* === 9. RESPONSIVENESS === */
+@media (max-width: 992px) {
+    .partners-grid-container,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        padding: 40px 5%;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 15px 5%;
+    }
+
+    nav {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 0 10px;
+        display: inline-block;
+        font-size: 0.9em;
+    }
+
+    .hero-container {
+        height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2em;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stats div {
+        width: 100%;
+    }
+}
