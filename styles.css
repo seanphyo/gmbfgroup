@@ -353,6 +353,66 @@ nav a:hover {
     border-color: var(--color-accent);
 }
 
+/* === 6.5. DIGITAL OCEAN PARTNERSHIP SECTION === */
+.partner-focus {
+    background-color: var(--color-light); /* Use a light background for contrast */
+    text-align: center;
+}
+
+.partner-focus h2 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.partner-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.benefit-card {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-card i {
+    font-size: 2.5em;
+    color: var(--color-accent);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.benefit-card h4 {
+    color: var(--color-secondary);
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.benefit-card p {
+    color: #555;
+    font-size: 1em;
+}
+
 /* === 7. CONTACT SECTION (UPDATED PROFESSIONAL LOOK) === */
 
 .contact-section-full {
@@ -462,7 +522,8 @@ footer {
 /* === 9. RESPONSIVENESS === */
 @media (max-width: 992px) {
     .partners-grid-container,
-    .contact-grid {
+    .contact-grid,
+    .partner-benefits-grid { /* ADDED for new section */
         grid-template-columns: 1fr;
     }
 }
