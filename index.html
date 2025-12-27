@@ -1,203 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GMBF Group | We Believe in Better</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GMBF Group | We Believe in Better</title>
+        <link rel="stylesheet" href="styles.css">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
 
-    <header>
-        <div class="logo">
-        <img src="logo.png" alt="GMBF Group Logo" class="header-logo">
-    </div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#services">Services</a>
-            <a href="#digital-ocean">DigitalOcean Partner</a> <a href="#clients">Clients & Partners</a>
-            <a href="#contact" class="cta-button">Contact Us</a>
-        </nav>
-    </header>
-
-   <section id="home" class="hero-container">
-    <div class="slideshow-wrapper">
-        <div class="slide fade" style="background-image: url('image-1.jpg'); display: block;"></div>
-        <div class="slide fade" style="background-image: url('image-2.jpg');"></div>
-        <div class="slide fade" style="background-image: url('image-3.jpg');"></div>
-        <div class="slide fade" style="background-image: url('image-4.jpg');"></div>
-        <div class="slide fade" style="background-image: url('image-5.jpg');"></div>
-
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-
-    <div class="hero-content">
-        <h1>GMBF GROUP</h1>
-        <p class="tagline">WE BELIEVE IN BETTER</p>
-        <h2>Technology-Driven Digital Solutions Since 2015</h2>
-        <a href="#contact" class="main-cta">Partner with Us Today</a>
-    </div>
-
-    <div style="text-align:center" class="slide-dots">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-        <span class="dot" onclick="currentSlide(5)"></span>
-    </div>
-</section>
-<script src="slider.js"></script>
-
-    <section id="about" class="content-section">
-    <div class="about-wrapper">
-        <div class="about-text">
-            <h3>About GMBF Group</h3>
-            <p><strong>GMBF GROUP</strong> is a premier technology-driven solutions provider, architecting innovative digital platforms that redefine industry standards.</p>
-            <p>Since our inception in 2015, we have strategically expanded our footprint across Southeast Asia, establishing a robust presence in <strong>Singapore (HQ)</strong>, <strong>Myanmar</strong>, and <strong>Thailand</strong>.</p>
-            <p>Our philosophy is simple yet powerful: We combine technological excellence with a seamless customer experience to drive digital transformation.</p>
-        </div>
-
-        <div class="stats">
-            <div>
-                <span>9+</span>
-                <small>Years of Excellence</small>
-                <p style="margin: 10px 0 0; font-size: 0.9em; color:#666;">Leading innovation in Travel, Logistics, and E-commerce sectors.</p>
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="GMBF Group Logo" class="header-logo">
             </div>
-            <div>
-                <span>3</span>
-                <small>Regional Hubs</small>
-                <p style="margin: 10px 0 0; font-size: 0.9em; color:#666;">Operating strategically across Singapore, Thailand, and Myanmar.</p>
-            </div>
-        </div>
-    </div>
-</section>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#digital-ocean">DigitalOcean Partner</a> <a
+                    href="#clients">Clients & Partners</a>
+                <a href="#contact" class="cta-button">Contact Us</a>
+            </nav>
+        </header>
 
-    <section id="services" class="content-section services-grid">
-        <h3>Our Core Services</h3>
-        <div class="service-card">
-            <h4>Travel Booking System</h4>
-            <p>Advanced solutions for online travel agencies, hotel, bus, airline, and railway ticketing systems.</p>
-        </div>
-        <div class="service-card">
-            <h4>E-commerce System</h4>
-            <p>Comprehensive digital platforms for online retail, including payment and inventory management.</p>
-        </div>
-        <div class="service-card">
-            <h4>AI-commerce System</h4>
-            <p>Empower Sale, Marketing, and Operation with Artificial Intelligence technology.</p>
-        </div>
-        <div class="service-card">
-            <h4>Cargo & Logistics System</h4>
-            <p>Streamlined solutions for cargo management, fleet tracking, and supply chain optimization.</p>
-        </div>
-        <div class="service-card">
-            <h4>Payment Integration</h4>
-            <p>Secure and reliable processing, including local and international payment gateways.</p>
-        </div>
-        <div class="service-card">
-            <h4>Marketing & Rewards Platform</h4>
-            <p>Customizable loyalty programs and customer engagement tools.</p>
-        </div>
-    </section>
-    
-    <section id="digital-ocean" class="content-section partner-focus">
-        <h2>DigitalOcean **Official Partner**</h2>
-        <p class="section-subtitle">Accelerate your growth with superior cloud solutions. As an official DigitalOcean partner, we offer enhanced benefits, better pricing, and dedicated expert support on all DigitalOcean products.</p>
-        <div class="partner-benefits-grid">
-            <div class="benefit-card">
-                <i class="icon-pricing">💰</i>
-                <h4>Exclusive Pricing</h4>
-                <p>Access special, optimized pricing on Droplets, Kubernetes, and other DigitalOcean services through our partnership.</p>
-            </div>
-            <div class="benefit-card">
-                <i class="icon-support">🔧</i>
-                <h4>Expert Managed Service</h4>
-                <p>Go beyond standard support with our dedicated team of cloud engineers to manage, deploy, and optimize your infrastructure.</p>
-            </div>
-            <div class="benefit-card">
-                <i class="icon-onboard">🚀</i>
-                <h4>Seamless Onboarding</h4>
-                <p>Fast-track your migration or new deployment with a hands-on approach, ensuring a quick and effective start.</p>
-            </div>
-        </div>
-        <a href="https://www.digitalocean.com/partners/directory/gmbf-group" target="_blank" class="main-cta">Check Our DigitalOcean Profile</a>
-    </section>
-    
+        <section id="home" class="hero-container">
+            <div class="slideshow-wrapper">
+                <div class="slide fade"
+                    style="background-image: url('image-1.jpg'); display: block;"></div>
+                <div class="slide fade"
+                    style="background-image: url('image-2.jpg');"></div>
+                <div class="slide fade"
+                    style="background-image: url('image-3.jpg');"></div>
+                <div class="slide fade"
+                    style="background-image: url('image-4.jpg');"></div>
+                <div class="slide fade"
+                    style="background-image: url('image-5.jpg');"></div>
 
-   <section id="clients" class="content-section partners-section">
-    <h3>Key Clients & Local Partners</h3>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
 
-    <div class="partners-grid-container">
-        <div class="partner-card client-list-card">
-            <h4>Highlight Customers in Myanmar</h4>
-            <div class="logo-grid client-logos">
-                <span class="logo-badge">JJ Express</span>
-                <span class="logo-badge">Elite Express</span>
-                <span class="logo-badge">Shwe Mandalar Express</span>
-                <span class="logo-badge">Famous Group</span>
-                <span class="logo-badge">Ayer Shwe Wah Group</span>
-                <span class="logo-badge">Elite Petroleum</span>
-                <span class="logo-badge">Padesar</span>
-                <span class="logo-badge">Danuphyu Daw Saw Yee</span>
-                <span class="logo-badge">Linnyone 4 Logistics</span>
+            <div class="hero-content">
+                <h1>GMBF GROUP</h1>
+                <p class="tagline">WE BELIEVE IN BETTER</p>
+                <h2>Technology-Driven Digital Solutions Since 2015</h2>
+                <a href="#contact" class="main-cta">Partner with Us Today</a>
+            </div>
+
+            <div style="text-align:center" class="slide-dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+        </section>
+        <script src="slider.js"></script>
+
+        <section id="about" class="content-section">
+            <div class="about-wrapper">
+                <div class="about-text">
+                    <h3>About GMBF Group</h3>
+                    <p><strong>GMBF GROUP</strong> is a premier
+                        technology-driven solutions provider, architecting
+                        innovative digital platforms that redefine industry
+                        standards.</p>
+                    <p>Since our inception in 2015, we have strategically
+                        expanded our footprint across Southeast Asia,
+                        establishing a robust presence in <strong>Singapore
+                            (HQ)</strong>, <strong>Myanmar</strong>, and
+                        <strong>Thailand</strong>.</p>
+                    <p>Our philosophy is simple yet powerful: We combine
+                        technological excellence with a seamless customer
+                        experience to drive digital transformation.</p>
+                </div>
+
+                <div class="stats">
+                    <div>
+                        <span>9+</span>
+                        <small>Years of Excellence</small>
+                        <p
+                            style="margin: 10px 0 0; font-size: 0.9em; color:#666;">Leading
+                            innovation in Travel, Logistics, and E-commerce
+                            sectors.</p>
+                    </div>
+                    <div>
+                        <span>3</span>
+                        <small>Regional Hubs</small>
+                        <p
+                            style="margin: 10px 0 0; font-size: 0.9em; color:#666;">Operating
+                            strategically across Singapore, Thailand, and
+                            Myanmar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="content-section services-grid">
+            <h3>Our Core Services</h3>
+            <div class="service-card">
+                <h4>Travel Booking System</h4>
+                <p>Advanced solutions for online travel agencies, hotel, bus,
+                    airline, and railway ticketing systems.</p>
+            </div>
+            <div class="service-card">
+                <h4>E-commerce System</h4>
+                <p>Comprehensive digital platforms for online retail, including
+                    payment and inventory management.</p>
+            </div>
+            <div class="service-card">
+                <h4>AI-commerce System</h4>
+                <p>Empower Sale, Marketing, and Operation with Artificial
+                    Intelligence technology.</p>
+            </div>
+            <div class="service-card">
+                <h4>Cargo & Logistics System</h4>
+                <p>Streamlined solutions for cargo management, fleet tracking,
+                    and supply chain optimization.</p>
+            </div>
+            <div class="service-card">
+                <h4>Payment Integration</h4>
+                <p>Secure and reliable processing, including local and
+                    international payment gateways.</p>
+            </div>
+            <div class="service-card">
+                <h4>Marketing & Rewards Platform</h4>
+                <p>Customizable loyalty programs and customer engagement
+                    tools.</p>
+            </div>
+        </section>
+
+        <section id="digital-ocean" class="content-section partner-focus">
+            <h2>DigitalOcean **Official Partner**</h2>
+            <p class="section-subtitle">Accelerate your growth with superior
+                cloud solutions. As an official DigitalOcean partner, we offer
+                enhanced benefits, better pricing, and dedicated expert support
+                on all DigitalOcean products.</p>
+            <div class="partner-benefits-grid">
+                <div class="benefit-card">
+                    <i class="icon-pricing">💰</i>
+                    <h4>Exclusive Pricing</h4>
+                    <p>Access special, optimized pricing on Droplets,
+                        Kubernetes, and other DigitalOcean services through our
+                        partnership.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="icon-support">🔧</i>
+                    <h4>Expert Managed Service</h4>
+                    <p>Go beyond standard support with our dedicated team of
+                        cloud engineers to manage, deploy, and optimize your
+                        infrastructure.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="icon-onboard">🚀</i>
+                    <h4>Seamless Onboarding</h4>
+                    <p>Fast-track your migration or new deployment with a
+                        hands-on approach, ensuring a quick and effective
+                        start.</p>
+                </div>
+            </div>
+            <a href="https://www.digitalocean.com/partners/directory/gmbf-group"
+                target="_blank" class="main-cta">Check Our DigitalOcean
+                Profile</a>
+        </section>
+
+        <section id="clients" class="content-section partners-section">
+            <h3>Key Clients & Local Partners</h3>
+
+            <div class="partners-grid-container">
+                <div class="partner-card client-list-card">
+                    <h4>Highlight Customers in Myanmar</h4>
+                    <div class="logo-grid client-logos">
+                        <a href="https://www.jjexpress.net/" target="_blank"><span class="logo-badge">JJ Express</span></a>
+                        <span class="logo-badge">Elite Express</span>
+                        <a href="https://shwemandalarexpress.com.mm/" target="_blank"><span class="logo-badge">Shwe Mandalar Express</span></a>
+                        <a href="https://famoustravellerinternational.com/" target="_blank"><span class="logo-badge">Famous Group</span></a>
+                        <span class="logo-badge">Ayer Shwe Wah Group</span>
+                        <span class="logo-badge">Elite Petroleum</span>
+                        <a href="https://padesar.com/" target="_blank"><span class="logo-badge">Padesar</span></a>
+                        <a href="https://shweai.ai/" target="_blank"><span class="logo-badge">Danuphyu Daw Saw Yee</span></a>
+                        <a href="https://linnyone4.com/" target="_blank"><span class="logo-badge">Linnyone 4 Logistics</span></a>
+                    </div>
+                </div>
+
+                <div class="partner-card payment-list-card">
+                    <h4>Local Payment Partners</h4>
+                    <div class="logo-grid payment-logos">
+                        <span class="logo-badge payment-badge">KBZ Pay</span>
+                        <span class="logo-badge payment-badge">Aya Pay</span>
+                        <span
+                            class="logo-badge payment-badge">Visa/Mastercard</span>
+                        <span class="logo-badge payment-badge">MPU</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section contact-section-full">
+            <h3>Get In Touch</h3>
+            <div class="contact-grid">
+                <div class="contact-card primary-contact">
+                    <h4>Reach Out to Our Team</h4>
+                    <p>We are committed to empowering businesses with scalable
+                        and innovative digital solutions.</p>
+                    <div class="contact-detail">
+                        <i class="icon-mail">📧</i>
+                        <p>Email: <a
+                                href="mailto:contact@gmbfgroup.com">contact@gmbfgroup.com</a></p>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="icon-phone">📞</i>
+                        <p>Phone: <a
+                                href="tel:+959895711239">+959895711239</a></p>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="icon-web">🌐</i>
+                        <p>Web: <a href="http://www.gmbfgroup.com"
+                                target="_blank">www.gmbfgroup.com</a></p>
+                    </div>
+                    <button class="main-cta form-cta">Send an Inquiry</button>
+                </div>
+
+                <div class="contact-card location-card">
+                    <h4>Global Presence</h4>
+                    <div class="location-detail">
+                        <h5>Headquarters (Singapore)</h5>
+                        <p>GMBF Group Holding Limited</p>
+                        <p>Innovation and Strategy</p>
+                    </div>
+                    <div class="location-detail">
+                        <h5>Regional Offices</h5>
+                        <p>Myanmar Office</p>
+                        <p>Thailand Office</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="inquiryPopup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <div id="formContainer">
+                    <h3>Send Us an Inquiry</h3>
+
+                    <form id="inquiryForm">
+                        <input type="text" id="name" placeholder="Your Name"
+                            required>
+                        <input type="email" id="email" placeholder="Email"
+                            required>
+                        <input type="tel" id="phone" placeholder="Phone Number"
+                            required>
+                        <textarea id="message" placeholder="Description"
+                            required></textarea>
+
+                        <button id="submit-btn" type="submit">Submit</button>
+                    </form>
+                </div>
+
+                <div id="successContainer" style="display:none;">
+                    <h3>Thank You!</h3>
+                    <p>Your inquiry has been sent successfully.</p>
+                    <button onclick="closePopup()">Close</button>
+                </div>
+
             </div>
         </div>
 
-        <div class="partner-card payment-list-card">
-            <h4>Local Payment Partners</h4>
-            <div class="logo-grid payment-logos">
-                <span class="logo-badge payment-badge">KBZ Pay</span>
-                <span class="logo-badge payment-badge">Aya Pay</span>
-                <span class="logo-badge payment-badge">Visa/Mastercard</span>
-                <span class="logo-badge payment-badge">MPU</span>
-            </div>
-        </div>
-    </div>
-</section>
+        <footer>
+            <p>&copy; 2015-2025 GMBF Group Holding Limited. All Rights
+                Reserved.</p>
+        </footer>
 
-    <section id="contact" class="content-section contact-section-full">
-    <h3>Get In Touch</h3>
-    <div class="contact-grid">
-        <div class="contact-card primary-contact">
-            <h4>Reach Out to Our Team</h4>
-            <p>We are committed to empowering businesses with scalable and innovative digital solutions.</p>
-            <div class="contact-detail">
-                <i class="icon-mail">📧</i> 
-                <p>Email: <a href="mailto:contact@gmbfgroup.com">contact@gmbfgroup.com</a></p>
-            </div>
-            <div class="contact-detail">
-                <i class="icon-phone">📞</i>
-                <p>Phone: <a href="tel:+959895711239">+959895711239</a></p>
-            </div>
-            <div class="contact-detail">
-                <i class="icon-web">🌐</i>
-                <p>Web: <a href="http://www.gmbfgroup.com" target="_blank">www.gmbfgroup.com</a></p>
-            </div>
-            <a href="#" class="main-cta form-cta">Send an Inquiry</a>
-        </div>
-
-        <div class="contact-card location-card">
-            <h4>Global Presence</h4>
-            <div class="location-detail">
-                <h5>Headquarters (Singapore)</h5>
-                <p>GMBF Group Holding Limited</p>
-                <p>Innovation and Strategy</p>
-            </div>
-            <div class="location-detail">
-                <h5>Regional Offices</h5>
-                <p>Myanmar Office</p>
-                <p>Thailand Office</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <footer>
-        <p>&copy; 2025-2026 GMBF Group Holding Limited. All Rights Reserved.</p>
-    </footer>
-
-</body>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+         <script src="inquiry.js"></script>
+    </body>
 </html>
