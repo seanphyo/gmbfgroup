@@ -1,0 +1,82 @@
+<style>
+  /* Bus Body */
+  .bus-frame {
+    width: 280px;
+    background: #e0e0e0;
+    border-radius: 30px 30px 10px 10px;
+    padding: 20px;
+    border: 4px solid #333;
+    margin: 20px auto;
+  }
+
+  /* Driver Section */
+  .driver {
+    text-align: right;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-right: 10px;
+  }
+
+  /* The Grid */
+  .seat-map {
+    display: grid;
+    /* Column 1 (Single) | Aisle | Column 2 & 3 (Double) */
+    grid-template-columns: 1fr 40px 1fr 1fr;
+    gap: 15px;
+  }
+
+  /* Seat Styling */
+  .seat {
+    height: 45px;
+    background: white;
+    border: 2px solid #2ecc71;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2ecc71;
+  }
+
+  /* Status Classes */
+  .booked {
+    background: #ddd;
+    border-color: #999;
+    color: #777;
+    cursor: not-allowed;
+  }
+
+  .selected {
+    background: #3498db;
+    border-color: #2980b9;
+    color: white;
+  }
+
+  /* Aisle Space */
+  .aisle {
+    grid-column: 2;
+  }
+</style>
+
+<div class="bus-frame">
+  <div class="driver">🎡</div>
+  
+  <div class="seat-map">
+    <div class="seat">A1</div>
+    <div class="aisle"></div>
+    <div class="seat booked">A2</div>
+    <div class="seat">A3</div>
+
+    <div class="seat">B1</div>
+    <div class="aisle"></div>
+    <div class="seat">B2</div>
+    <div class="seat">B3</div>
+
+    <div class="seat selected">C1</div>
+    <div class="aisle"></div>
+    <div class="seat">C2</div>
+    <div class="seat">C3</div>
+  </div>
+</div>

@@ -6,11 +6,12 @@
 
 /* === 1. VARIABLES & BASE STYLES === */
 :root {
-    --color-primary: #333;      /* Dark Gray for Text */
-    --color-secondary: #4CAF50; /* Green Accent (Logo Green) */
-    --color-accent: #E53935;    /* Red Accent (Logo Red) */
-    --color-light: #f9f9f9;     /* Light Background */
+    --color-primary: #1c2333;
+    --color-secondary: #13b884;
+    --color-accent: #ff4b4b;
+    --color-light: #f5f7fb;
     --color-white: #ffffff;
+    --color-dark: #0f172a;
     --font-stack: 'Montserrat', sans-serif;
 }
 
@@ -46,13 +47,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10%; /* Slightly less vertical padding for a sleeker look */
+    padding: 10px 4%;
     background-color: var(--color-light); /* Slight off-white background */
     border-bottom: 1px solid #eee; /* Subtle border at the bottom */
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05); /* Softer shadow */
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
     position: sticky;
     top: 0;
     z-index: 100;
+    backdrop-filter: blur(8px);
 }
 
 .header-logo {
@@ -64,12 +66,30 @@ header {
 nav a {
     text-decoration: none;
     color: var(--color-primary);
-    margin-left: 25px;
     font-weight: 500;
-    padding: 5px 0; /* Add vertical padding for the underline effect */
+    padding: 8px 10px;
+    font-size: 0.95rem;
     position: relative;
-    transition: color 0.3s;
+    border-radius: 999px;
+    transition: color 0.25s ease, transform 0.25s ease;
+    animation: navItemIn 0.45s ease both;
+    z-index: 1;
 }
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+nav a:nth-child(1) { animation-delay: 0.04s; }
+nav a:nth-child(2) { animation-delay: 0.08s; }
+nav a:nth-child(3) { animation-delay: 0.12s; }
+nav a:nth-child(4) { animation-delay: 0.16s; }
+nav a:nth-child(5) { animation-delay: 0.20s; }
+nav a:nth-child(6) { animation-delay: 0.24s; }
 
 /* Modern Underline on Hover/Active */
 nav a::after {
@@ -94,11 +114,36 @@ nav a:hover {
     color: var(--color-secondary);
 }
 
+nav a:not(.cta-button)::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(19, 184, 132, 0.18), rgba(19, 184, 132, 0.07));
+    border: 1px solid rgba(19, 184, 132, 0.22);
+    transform: scale(0.92);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    z-index: -1;
+}
+
+nav a:not(.cta-button):hover::before,
+nav a:not(.cta-button):focus::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+nav a:not(.cta-button):hover,
+nav a:not(.cta-button):focus {
+    color: #0d1b2a;
+    transform: translateY(-1px);
+}
+
 .cta-button {
     background-color: var(--color-secondary);
     color: var(--color-white) !important;
-    padding: 10px 20px; /* Increased padding */
-    margin-left: 30px; /* Increase separation */
+    padding: 9px 18px;
+    margin-left: 0;
     border-radius: 25px; /* Pill shape for modern look */
     font-weight: 700; /* Make it bold */
     transition: background-color 0.3s, transform 0.2s;
@@ -109,6 +154,10 @@ nav a:hover {
     background-color: #388E3C;
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(76, 175, 80, 0.4);
+}
+
+.cta-button::after {
+    display: none;
 }
 
 /* === 3. HERO SECTION WITH JAVASCRIPT SLIDESHOW === */
@@ -155,10 +204,10 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.55);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.82), rgba(22, 32, 62, 0.65));
     color: var(--color-white);
     padding: 100px 10%;
-    z-index: 10;
+    z-index: 20;
 }
 
 .hero-content h1, .hero-content h2, .hero-content p {
@@ -167,19 +216,20 @@ nav a:hover {
 }
 
 .hero-content h1 {
-    font-size: 4em;
-    margin-bottom: 10px;
+    font-size: 3.2em;
+    max-width: 900px;
+    margin-bottom: 16px;
 }
 
 .hero-content h2 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 400;
-    margin-top: 0;
-    margin-bottom: 40px;
+    margin: 0 0 40px;
+    max-width: 820px;
 }
 
 .tagline {
-    color: var(--color-secondary);
+    color: #7cefcf;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -193,13 +243,44 @@ nav a:hover {
     padding: 15px 30px;
     text-decoration: none;
     font-weight: 700;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: background-color 0.3s;
     z-index: 2;
 }
 
 .main-cta:hover {
     background-color: #C62828;
+}
+
+.hero-cta-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 25;
+}
+
+.secondary-cta {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+}
+
+.secondary-cta:hover {
+    background-color: #ffffff;
+    color: var(--color-dark);
+}
+
+@keyframes navItemIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .prev, .next {
@@ -216,12 +297,16 @@ nav a:hover {
     border-radius: 0 3px 3px 0;
     user-select: none;
     background-color: rgba(0,0,0,0.4);
-    z-index: 15;
+    z-index: 35;
 }
 
 .next {
-    right: 0;
+    right: 8px;
     border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 8px;
 }
 
 .prev:hover, .next:hover {
@@ -233,7 +318,7 @@ nav a:hover {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 15;
+    z-index: 12;
 }
 
 .dot {
@@ -249,6 +334,38 @@ nav a:hover {
 
 .active, .dot:hover {
     background-color: var(--color-secondary);
+}
+
+.trust-strip {
+    background: var(--color-dark);
+    color: var(--color-white);
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.trust-label {
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.trust-logos {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.trust-logos span {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 0.85em;
 }
 
 /* === 4. ABOUT SECTION STATS === */
@@ -291,13 +408,14 @@ nav a:hover {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     border-top: 5px solid var(--color-secondary);
 }
 
 .service-card:hover {
     transform: translateY(-5px);
     border-top-color: var(--color-accent);
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
 }
 
 .service-card h4 {
@@ -382,64 +500,61 @@ nav a:hover {
     border-color: var(--color-accent);
 }
 
-/* === 6.5. DIGITAL OCEAN PARTNERSHIP SECTION === */
-.partner-focus {
-    background-color: var(--color-light); /* Use a light background for contrast */
-    text-align: center;
+.products-highlight {
+    padding-top: 0;
 }
 
-.partner-focus h2 {
-    color: var(--color-primary);
-    margin-bottom: 20px;
+.process-section {
+    background: linear-gradient(180deg, #eef4ff 0%, #f7fbff 100%);
+    border-radius: 14px;
 }
 
-.section-subtitle {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.partner-benefits-grid {
+.process-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-    text-align: left;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
 }
 
-.benefit-card {
+.process-step {
     background-color: var(--color-white);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    border-radius: 10px;
+    padding: 28px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
 }
 
-.benefit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.benefit-card i {
-    font-size: 2.5em;
-    color: var(--color-accent);
-    margin-bottom: 15px;
-    display: block;
-}
-
-.benefit-card h4 {
+.process-step span {
+    font-size: 0.85em;
+    font-weight: 700;
     color: var(--color-secondary);
-    font-size: 1.3em;
-    margin-top: 0;
-    margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
-.benefit-card p {
-    color: #555;
-    font-size: 1em;
+.process-step h4 {
+    margin: 10px 0;
+}
+
+.case-study-section {
+    background-color: var(--color-light);
+}
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.case-card {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    padding: 26px;
+    border: 1px solid #e8edf5;
+}
+
+.metric {
+    margin: 0 0 8px;
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 1.2em;
 }
 
 /* === 7. CONTACT SECTION (UPDATED PROFESSIONAL LOOK) === */
@@ -541,6 +656,24 @@ nav a:hover {
     color: var(--color-light);
 }
 
+.stack-section {
+    background-color: #f7faff;
+}
+
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
+}
+
+.stack-card {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    padding: 26px;
+    border-left: 5px solid var(--color-secondary);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+}
+
 /* === POP UP Styling === */
 
 .popup {
@@ -637,22 +770,220 @@ nav a:hover {
 }
 
 /* === 8. FOOTER === */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--color-primary);
-    color: var(--color-light);
-    font-size: 0.9em;
+/* Clients & Partners standalone page */
+.clients-partners-page {
+    background-color: var(--color-white);
 }
 
+.clients-partners-page .logo-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.products-services-page {
+    background-color: var(--color-white);
+}
+
+.products-services-page .logo-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.products-services-hero {
+    padding-bottom: 30px;
+}
+
+.products-services-hero h1 {
+    color: var(--color-accent);
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.products-services-lead {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    color: #444;
+}
+
+.products-grid {
+    background-color: var(--color-light);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.products-services-section-title {
+    font-size: 2em;
+    color: var(--color-accent);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.products-services-page .services-grid {
+    margin-top: 40px;
+}
+
+.clients-page-hero {
+    padding-bottom: 40px;
+}
+
+.clients-page-hero h1 {
+    color: var(--color-accent);
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.clients-page-lead {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    color: #444;
+    font-size: 1.05em;
+    line-height: 1.65;
+}
+
+.clients-page-section-title {
+    font-size: 2em;
+    color: var(--color-accent);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.clients-partners-page .partners-section h2 {
+    margin-top: 0;
+}
+
+.clients-page-outro {
+    text-align: center;
+    margin-top: 36px;
+    color: #555;
+}
+
+.clients-page-contact-link {
+    color: var(--color-secondary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.clients-page-contact-link:hover {
+    text-decoration: underline;
+    color: var(--color-accent);
+}
+
+.clients-home-link {
+    text-align: center;
+    margin-top: 28px;
+}
+
+.clients-home-link a {
+    color: var(--color-secondary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.clients-home-link a:hover {
+    text-decoration: underline;
+    color: var(--color-accent);
+}
+
+footer {
+    padding: 30px 10%;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-size: 0.92em;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    margin: 0 0 6px;
+    font-weight: 700;
+}
+
+.footer-copy {
+    margin: 0;
+    color: #c7d2e2;
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #dbe4f0;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* === 8.5 PRIVACY POLICY PAGE === */
+.policy-page {
+    background-color: var(--color-light);
+}
+
+.policy-wrapper {
+    max-width: 900px;
+    margin: 40px auto 80px;
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+}
+
+.policy-wrapper h1 {
+    color: var(--color-accent);
+    margin-bottom: 10px;
+}
+
+.policy-wrapper h2 {
+    color: var(--color-primary);
+    margin-top: 30px;
+    margin-bottom: 12px;
+    font-size: 1.35em;
+}
+
+.policy-wrapper p,
+.policy-wrapper li {
+    color: #444;
+}
+
+.policy-wrapper ul {
+    padding-left: 20px;
+}
+
+.policy-meta {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.policy-highlight {
+    border-left: 4px solid var(--color-secondary);
+    background-color: #f3fbf3;
+    padding: 14px 16px;
+    border-radius: 6px;
+}
 
 
 
 /* === 9. RESPONSIVENESS === */
 @media (max-width: 992px) {
     .partners-grid-container,
-    .contact-grid,
-    .partner-benefits-grid { /* ADDED for new section */
+    .contact-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -670,11 +1001,14 @@ footer {
     nav {
         margin-top: 10px;
         text-align: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
     }
 
     nav a {
-        margin: 0 10px;
-        display: inline-block;
+        margin: 0;
+        display: inline-flex;
         font-size: 0.9em;
     }
     
@@ -695,6 +1029,15 @@ footer {
         font-size: 1.2em;
     }
 
+    .trust-strip {
+        padding: 16px 5%;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .stats {
         flex-direction: column;
         /* gap: 15px; */
@@ -710,6 +1053,12 @@ footer {
 
     .popup-content h3{
         font-size: 1.5em;
+    }
+
+    .policy-wrapper {
+        margin: 20px auto 40px;
+        padding: 24px 18px;
+        border-radius: 10px;
     }
 
     
