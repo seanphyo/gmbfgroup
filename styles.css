@@ -1097,7 +1097,7 @@ footer {
 }
 
 /* === Web Chat Widget === */
-.gmbf-chat {
+.gmbf-assist {
     position: fixed;
     right: 18px;
     bottom: 18px;
@@ -1105,7 +1105,7 @@ footer {
     font-family: var(--font-stack);
 }
 
-.gmbf-chat-toggle {
+.gmbf-assist-toggle {
     background: linear-gradient(135deg, var(--color-secondary), #0ea871);
     color: #fff;
     border: none;
@@ -1116,7 +1116,7 @@ footer {
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.24);
 }
 
-.gmbf-chat-panel {
+.gmbf-assist-panel {
     display: none;
     width: min(360px, calc(100vw - 24px));
     height: 480px;
@@ -1128,12 +1128,12 @@ footer {
     border: 1px solid #e8edf5;
 }
 
-.gmbf-chat-panel.open {
+.gmbf-assist-panel.open {
     display: flex;
     flex-direction: column;
 }
 
-.gmbf-chat-header {
+.gmbf-assist-header {
     background: var(--color-dark);
     color: #fff;
     padding: 12px 14px;
@@ -1142,7 +1142,7 @@ footer {
     align-items: center;
 }
 
-.gmbf-chat-close {
+.gmbf-assist-close {
     border: none;
     background: transparent;
     color: #fff;
@@ -1150,14 +1150,14 @@ footer {
     cursor: pointer;
 }
 
-.gmbf-chat-messages {
+.gmbf-assist-messages {
     flex: 1;
     overflow-y: auto;
     padding: 12px;
     background: #f8fbff;
 }
 
-.gmbf-chat-msg {
+.gmbf-assist-msg {
     padding: 10px 12px;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -1166,22 +1166,22 @@ footer {
     white-space: pre-wrap;
 }
 
-.gmbf-chat-msg.user {
+.gmbf-assist-msg.user {
     background: #dff8ee;
     margin-left: 34px;
 }
 
-.gmbf-chat-msg.bot {
+.gmbf-assist-msg.bot {
     background: #ffffff;
     border: 1px solid #e7edf6;
     margin-right: 34px;
 }
 
-.gmbf-chat-msg.pending {
+.gmbf-assist-msg.pending {
     opacity: 0.65;
 }
 
-.gmbf-chat-form {
+.gmbf-assist-form {
     display: flex;
     gap: 8px;
     padding: 10px;
@@ -1189,7 +1189,7 @@ footer {
     background: #fff;
 }
 
-.gmbf-chat-input {
+.gmbf-assist-input {
     flex: 1;
     border: 1px solid #cfd8e6;
     border-radius: 8px;
@@ -1198,7 +1198,7 @@ footer {
     outline: none;
 }
 
-.gmbf-chat-form button {
+.gmbf-assist-form button {
     border: none;
     border-radius: 8px;
     background: var(--color-accent);

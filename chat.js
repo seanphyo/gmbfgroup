@@ -1,31 +1,31 @@
 (() => {
     const API_URL = "https://gmbfbot.up.railway.app/webchat/message";
-    const SESSION_KEY = "gmbf_webchat_session";
+    const SESSION_KEY = "gmbf_webassist_session";
 
     const root = document.createElement("div");
-    root.className = "gmbf-chat";
+    root.className = "gmbf-assist";
     root.innerHTML = `
-        <button class="gmbf-chat-toggle" aria-label="Open chat">AI Chat</button>
-        <section class="gmbf-chat-panel" aria-hidden="true">
-            <header class="gmbf-chat-header">
+        <button class="gmbf-assist-toggle" aria-label="Open assistant">AI Assistant</button>
+        <section class="gmbf-assist-panel" aria-hidden="true">
+            <header class="gmbf-assist-header">
                 <strong>GMBF AI Assistant</strong>
-                <button class="gmbf-chat-close" aria-label="Close chat">&times;</button>
+                <button class="gmbf-assist-close" aria-label="Close assistant">&times;</button>
             </header>
-            <div class="gmbf-chat-messages"></div>
-            <form class="gmbf-chat-form">
-                <input type="text" class="gmbf-chat-input" placeholder="Ask about products or services..." required />
+            <div class="gmbf-assist-messages"></div>
+            <form class="gmbf-assist-form">
+                <input type="text" class="gmbf-assist-input" placeholder="Ask about products or services..." required />
                 <button type="submit">Send</button>
             </form>
         </section>
     `;
     document.body.appendChild(root);
 
-    const toggleBtn = root.querySelector(".gmbf-chat-toggle");
-    const panel = root.querySelector(".gmbf-chat-panel");
-    const closeBtn = root.querySelector(".gmbf-chat-close");
-    const form = root.querySelector(".gmbf-chat-form");
-    const input = root.querySelector(".gmbf-chat-input");
-    const messages = root.querySelector(".gmbf-chat-messages");
+    const toggleBtn = root.querySelector(".gmbf-assist-toggle");
+    const panel = root.querySelector(".gmbf-assist-panel");
+    const closeBtn = root.querySelector(".gmbf-assist-close");
+    const form = root.querySelector(".gmbf-assist-form");
+    const input = root.querySelector(".gmbf-assist-input");
+    const messages = root.querySelector(".gmbf-assist-messages");
 
     let open = false;
     let sessionId = localStorage.getItem(SESSION_KEY) || "";
@@ -41,7 +41,7 @@
 
     function appendMessage(text, sender) {
         const msg = document.createElement("div");
-        msg.className = `gmbf-chat-msg ${sender}`;
+        msg.className = `gmbf-assist-msg ${sender}`;
         msg.textContent = text;
         messages.appendChild(msg);
         messages.scrollTop = messages.scrollHeight;
@@ -68,7 +68,7 @@
             });
             const data = await response.json();
 
-            const pending = messages.querySelector(".gmbf-chat-msg.pending");
+            const pending = messages.querySelector(".gmbf-assist-msg.pending");
             if (pending) pending.remove();
 
             if (data && data.session_id) {
@@ -83,7 +83,7 @@
 
             appendMessage(data.reply, "bot");
         } catch (error) {
-            const pending = messages.querySelector(".gmbf-chat-msg.pending");
+            const pending = messages.querySelector(".gmbf-assist-msg.pending");
             if (pending) pending.remove();
             appendMessage("Network error. Please try again later.", "bot");
         } finally {
