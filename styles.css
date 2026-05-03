@@ -47,7 +47,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 4%;
+    padding: 10px 3%;
     background-color: var(--color-light); /* Slight off-white background */
     border-bottom: 1px solid #eee; /* Subtle border at the bottom */
     box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
@@ -58,7 +58,7 @@ header {
 }
 
 .header-logo {
-    height: 40px;
+    height: 38px;
     width: auto;
     vertical-align: middle;
 }
@@ -67,8 +67,8 @@ nav a {
     text-decoration: none;
     color: var(--color-primary);
     font-weight: 500;
-    padding: 8px 10px;
-    font-size: 0.95rem;
+    padding: 8px 9px;
+    font-size: 0.92rem;
     position: relative;
     border-radius: 999px;
     transition: color 0.25s ease, transform 0.25s ease;
@@ -81,7 +81,7 @@ nav {
     align-items: center;
     justify-content: flex-end;
     flex-wrap: nowrap;
-    gap: 10px;
+    gap: 8px;
 }
 
 nav a:nth-child(1) { animation-delay: 0.04s; }
@@ -142,7 +142,7 @@ nav a:not(.cta-button):focus {
 .cta-button {
     background-color: var(--color-secondary);
     color: var(--color-white) !important;
-    padding: 9px 18px;
+    padding: 8px 16px;
     margin-left: 0;
     border-radius: 25px; /* Pill shape for modern look */
     font-weight: 700; /* Make it bold */
@@ -206,7 +206,7 @@ nav a:not(.cta-button):focus {
     text-align: center;
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.82), rgba(22, 32, 62, 0.65));
     color: var(--color-white);
-    padding: 100px 10%;
+    padding: 90px 8% 140px;
     z-index: 20;
 }
 
@@ -216,15 +216,16 @@ nav a:not(.cta-button):focus {
 }
 
 .hero-content h1 {
-    font-size: 3.2em;
+    font-size: clamp(2.2rem, 5.8vw, 3.4rem);
     max-width: 900px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+    line-height: 1.15;
 }
 
 .hero-content h2 {
-    font-size: 1.2em;
+    font-size: clamp(1rem, 2.1vw, 1.35rem);
     font-weight: 400;
-    margin: 0 0 40px;
+    margin: 0 0 26px;
     max-width: 820px;
 }
 
@@ -232,8 +233,10 @@ nav a:not(.cta-button):focus {
     color: #7cefcf;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
 }
 
 .main-cta {
@@ -257,7 +260,7 @@ nav a:not(.cta-button):focus {
     gap: 14px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 28px;
+    margin-bottom: 58px;
     position: relative;
     z-index: 25;
 }
@@ -315,7 +318,7 @@ nav a:not(.cta-button):focus {
 
 .slide-dots {
     position: absolute;
-    bottom: 20px;
+    bottom: 12px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 12;
@@ -339,7 +342,7 @@ nav a:not(.cta-button):focus {
 .trust-strip {
     background: var(--color-dark);
     color: var(--color-white);
-    padding: 18px 8%;
+    padding: 16px 6%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -365,7 +368,30 @@ nav a:not(.cta-button):focus {
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 6px 12px;
     border-radius: 30px;
-    font-size: 0.85em;
+    font-size: 0.82em;
+}
+
+@media (max-width: 1200px) {
+    header {
+        padding: 8px 2%;
+    }
+
+    .header-logo {
+        height: 34px;
+    }
+
+    nav {
+        gap: 6px;
+    }
+
+    nav a {
+        font-size: 0.88rem;
+        padding: 7px 8px;
+    }
+
+    .cta-button {
+        padding: 8px 14px;
+    }
 }
 
 /* === 4. ABOUT SECTION STATS === */
