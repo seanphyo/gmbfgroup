@@ -5,7 +5,13 @@
     const root = document.createElement("div");
     root.className = "gmbf-assist";
     root.innerHTML = `
-        <button class="gmbf-assist-toggle" aria-label="Open assistant">AI Assistant</button>
+        <button class="gmbf-assist-toggle" aria-label="Open AI assistant">
+            <span class="gmbf-assist-avatar">🤖</span>
+            <span class="gmbf-assist-toggle-text">
+                <strong>AI Assistant | AI မိတ်ဆွေ</strong>
+                <small>Automation service online | AI ဝန်ဆောင်မှုအဆင်သင့်</small>
+            </span>
+        </button>
         <section class="gmbf-assist-panel" aria-hidden="true">
             <header class="gmbf-assist-header">
                 <strong>GMBF AI Assistant</strong>
@@ -34,6 +40,7 @@
         open = nextOpen;
         panel.classList.toggle("open", open);
         panel.setAttribute("aria-hidden", String(!open));
+        root.classList.toggle("panel-open", open);
         if (open) {
             input.focus();
         }

@@ -1105,15 +1105,59 @@ footer {
     font-family: var(--font-stack);
 }
 
+.gmbf-assist-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.gmbf-assist-toggle-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.gmbf-assist-toggle-text strong {
+    font-size: 0.86rem;
+    color: #ffffff;
+}
+
+.gmbf-assist-toggle-text small {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.73rem;
+}
+
 .gmbf-assist-toggle {
     background: linear-gradient(135deg, var(--color-secondary), #0ea871);
     color: #fff;
     border: none;
-    border-radius: 999px;
-    padding: 12px 18px;
+    border-radius: 14px;
+    padding: 10px 14px;
     font-weight: 700;
     cursor: pointer;
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.24);
+    animation: assistPulse 1.8s ease-in-out infinite;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 250px;
+}
+
+.gmbf-assist-toggle:hover {
+    animation-play-state: paused;
+    transform: translateY(-1px);
+}
+
+.gmbf-assist.panel-open .gmbf-assist-toggle {
+    display: none;
 }
 
 .gmbf-assist-panel {
@@ -1206,4 +1250,13 @@ footer {
     font-weight: 700;
     padding: 0 14px;
     cursor: pointer;
+}
+
+@keyframes assistPulse {
+    0%, 100% {
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.24), 0 0 0 0 rgba(19, 184, 132, 0.35);
+    }
+    50% {
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.24), 0 0 0 10px rgba(19, 184, 132, 0);
+    }
 }
