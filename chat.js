@@ -9,7 +9,6 @@
             <span class="gmbf-assist-avatar">🤖</span>
             <span class="gmbf-assist-toggle-text">
                 <strong>AI Assistant | AI မိတ်ဆွေ</strong>
-                <small>Automation service online | AI ဝန်ဆောင်မှုအဆင်သင့်</small>
             </span>
         </button>
         <section class="gmbf-assist-panel" aria-hidden="true">
