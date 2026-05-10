@@ -88,6 +88,87 @@ header.site-header {
     outline-offset: 2px;
 }
 
+.magic-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background: linear-gradient(165deg, #ffffff 0%, #f5f3ff 100%);
+    color: #4c1d95;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.magic-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(76, 29, 149, 0.2);
+}
+
+.magic-toggle:focus-visible {
+    outline: 2px solid rgba(147, 51, 234, 0.45);
+    outline-offset: 2px;
+}
+
+.magic-hint {
+    position: fixed;
+    top: 72px;
+    right: 18px;
+    z-index: 10060;
+    background: rgba(15, 23, 42, 0.92);
+    color: #f8fafc;
+    border: 1px solid rgba(148, 163, 184, 0.34);
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    box-shadow: 0 10px 20px rgba(2, 6, 23, 0.3);
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.26s ease, transform 0.26s ease;
+}
+
+.magic-hint.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes magicHeaderGlow {
+    0%, 100% {
+        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+        border-bottom-color: rgba(226, 232, 240, 1);
+    }
+    50% {
+        box-shadow: 0 10px 28px rgba(34, 211, 238, 0.26);
+        border-bottom-color: rgba(34, 211, 238, 0.4);
+    }
+}
+
+@keyframes magicNavDance {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+}
+
+body.magic-on header.site-header {
+    animation: magicHeaderGlow 3.8s ease-in-out infinite;
+}
+
+body.magic-on header nav a:not(.cta-button) {
+    animation: magicNavDance 2.8s ease-in-out infinite;
+}
+
+body.magic-on header nav a:not(.cta-button):nth-child(2n) {
+    animation-delay: 0.35s;
+}
+
+body.magic-on .logo-link {
+    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.35));
+}
+
 .ambient-player {
     position: fixed;
     left: 16px;
@@ -229,6 +310,124 @@ header.site-header {
 .ambient-toast.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@keyframes musicHeroDrift {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-4px) scale(1.004); }
+}
+
+@keyframes musicPulseSoft {
+    0%, 100% { transform: translateY(0px) scale(1); box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14); }
+    50% { transform: translateY(-2px) scale(1.01); box-shadow: 0 14px 28px rgba(14, 165, 233, 0.2); }
+}
+
+@keyframes musicFloatCard {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+}
+
+@keyframes musicTextShimmer {
+    0%, 100% { transform: translateY(0px); text-shadow: 0 0 0 rgba(56, 189, 248, 0); }
+    50% { transform: translateY(-2px); text-shadow: 0 0 18px rgba(56, 189, 248, 0.2); }
+}
+
+@keyframes homeTextFloatAuto {
+    0%, 100% { transform: translateY(0px); text-shadow: 0 0 0 rgba(34, 211, 238, 0); }
+    50% { transform: translateY(-6px); text-shadow: 0 0 22px rgba(34, 211, 238, 0.24); }
+}
+
+/* Homepage auto-floating text (always on, subtle show mode). */
+.hero-content h1,
+.hero-content h2,
+.hero-content .tagline {
+    will-change: transform;
+    animation: homeTextFloatAuto 6.2s ease-in-out infinite;
+}
+
+.hero-content h2 {
+    animation-duration: 7s;
+    animation-delay: 0.45s;
+}
+
+.hero-content .tagline {
+    animation-duration: 7.8s;
+    animation-delay: 0.9s;
+}
+
+body.music-live .hero-content {
+    animation: musicHeroDrift 14s ease-in-out infinite;
+    transform-origin: center;
+}
+
+body.music-live .hero-content h1,
+body.music-live .hero-content h2,
+body.music-live .tagline {
+    animation: musicTextShimmer 5.2s ease-in-out infinite;
+}
+
+body.music-live .hero-content h2 {
+    animation-delay: 0.6s;
+}
+
+body.music-live .tagline {
+    animation-delay: 1s;
+}
+
+body.music-live .main-cta {
+    animation: musicPulseSoft 3.8s ease-in-out infinite;
+}
+
+body.music-live .service-card,
+body.music-live .partner-showcase-card,
+body.music-live .pro-service-card,
+body.music-live .product-showcase-card {
+    animation: musicFloatCard 7.6s ease-in-out infinite;
+}
+
+body.music-live .service-card:nth-child(2n),
+body.music-live .partner-showcase-card:nth-child(2n),
+body.music-live .pro-service-card:nth-child(2n),
+body.music-live .product-showcase-card:nth-child(2n) {
+    animation-delay: 0.55s;
+}
+
+body.music-live .trust-logos-track {
+    animation-duration: 24s;
+}
+
+body.music-live .products-services-section-title,
+body.music-live .clients-page-title,
+body.music-live .clients-page-lead,
+body.music-live .products-services-lead {
+    animation: musicTextShimmer 6.6s ease-in-out infinite;
+}
+
+body.music-live .products-services-lead,
+body.music-live .clients-page-lead {
+    animation-delay: 0.7s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.music-live .hero-content,
+    .hero-content h1,
+    .hero-content h2,
+    .hero-content .tagline,
+    body.music-live .hero-content h1,
+    body.music-live .hero-content h2,
+    body.music-live .tagline,
+    body.music-live .main-cta,
+    body.music-live .service-card,
+    body.music-live .partner-showcase-card,
+    body.music-live .pro-service-card,
+    body.music-live .product-showcase-card,
+    body.music-live .trust-logos-track,
+    body.music-live .products-services-section-title,
+    body.music-live .clients-page-title,
+    body.music-live .clients-page-lead,
+    body.music-live .products-services-lead {
+        animation: none !important;
+    }
 }
 
 .logo {
@@ -2540,6 +2739,12 @@ body.theme-night .ambient-btn {
     background: #1e293b;
     color: #e2e8f0;
     border-color: rgba(148, 163, 184, 0.28);
+}
+
+body.theme-night .magic-toggle {
+    background: linear-gradient(165deg, #1e293b 0%, #312e81 100%);
+    color: #c4b5fd;
+    border-color: rgba(148, 163, 184, 0.32);
 }
 
 body.theme-night .ambient-reopen {

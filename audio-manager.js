@@ -254,6 +254,10 @@
         if (reopen) reopen.classList.toggle("is-visible", hidden);
     }
 
+    function setMusicMotion(active) {
+        document.body.classList.toggle("music-live", !!active);
+    }
+
     function weatherLabel(bucket) {
         if (bucket === "storm") return "storm";
         if (bucket === "rainy") return "rainy";
@@ -310,6 +314,7 @@
         try {
             await state.audio.play();
             updatePlayButton(true);
+            setMusicMotion(true);
             const period = periodFromHour(mmHour());
             const bucket = weatherBucket(state.weatherCode);
             const contextMsg = `Music is playing according to Myanmar ${periodLabel(period)} and ${weatherLabel(bucket)} weather.`;
@@ -349,6 +354,7 @@
                     await playTrack();
                 } else {
                     state.audio.pause();
+                    setMusicMotion(false);
                     updatePlayButton(false);
                     updateStatus("Paused.");
                 }
@@ -384,6 +390,7 @@
         });
 
         state.audio.addEventListener("error", () => {
+            setMusicMotion(false);
             updateStatus(
                 "Track not found. Please upload matching files in /audio."
             );
