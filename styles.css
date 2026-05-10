@@ -599,12 +599,25 @@ header nav a[aria-current="page"]:not(.cta-button)::before {
 }
 
 .trust-logos {
+    flex: 1;
+    min-width: 0;
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
 }
 
-.trust-logos span {
+.trust-logos-track {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    min-width: max-content;
+    padding-right: 10px;
+    animation: trustTicker 28s linear infinite;
+}
+
+.trust-logos-track span {
     display: inline-block;
     background: linear-gradient(
         145deg,
@@ -623,7 +636,7 @@ header nav a[aria-current="page"]:not(.cta-button)::before {
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.trust-logos span:hover {
+.trust-logos-track span:hover {
     transform: translateY(-2px);
     border-color: rgba(255, 255, 255, 0.44);
     box-shadow:
@@ -639,6 +652,15 @@ header nav a[aria-current="page"]:not(.cta-button)::before {
     box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.74),
         0 5px 16px rgba(245, 158, 11, 0.24);
+}
+
+.trust-strip:hover .trust-logos-track {
+    animation-play-state: paused;
+}
+
+@keyframes trustTicker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
 }
 
 @media (max-width: 1200px) {
