@@ -3,43 +3,68 @@
         enabled: "gmbf_audio_enabled",
         volume: "gmbf_audio_volume",
         weather: "gmbf_audio_weather_cache",
+        hidden: "gmbf_audio_hidden",
     };
 
     const TRACKS = {
         morning: [
-            { src: "audio/morning-motivation-1.wav", title: "Morning Motivation 1" },
-            { src: "audio/morning-motivation-2.wav", title: "Morning Motivation 2" },
-            { src: "audio/morning-motivation-3.wav", title: "Morning Motivation 3" },
+            { src: "audio/mixkit-a-very-happy-christmas-897.mp3", title: "Very Happy Christmas" },
+            { src: "audio/mixkit-beautiful-dream-493.mp3", title: "Beautiful Dream" },
+            { src: "audio/mixkit-valley-sunset-127.mp3", title: "Valley Sunset" },
+            { src: "audio/mixkit-serene-view-443.mp3", title: "Serene View" },
+            { src: "audio/mixkit-spirit-in-the-woods-139.mp3", title: "Spirit in the Woods" },
+            { src: "audio/mixkit-discover-587.mp3", title: "Discover" },
+            { src: "audio/mixkit-relaxing-in-nature-522.mp3", title: "Relaxing in Nature" },
         ],
         day: [
-            { src: "audio/day-rhythm-1.wav", title: "Active Rhythm 1" },
-            { src: "audio/day-rhythm-2.wav", title: "Active Rhythm 2" },
-            { src: "audio/day-rhythm-3.wav", title: "Active Rhythm 3" },
+            { src: "audio/mixkit-driving-ambition-32.mp3", title: "Driving Ambition" },
+            { src: "audio/mixkit-tech-house-vibes-130.mp3", title: "Tech House Vibes" },
+            { src: "audio/mixkit-games-worldbeat-466.mp3", title: "Games Worldbeat" },
+            { src: "audio/mixkit-gimme-that-groove-872.mp3", title: "Gimme That Groove" },
+            { src: "audio/mixkit-island-beat-250.mp3", title: "Island Beat" },
+            { src: "audio/mixkit-latin-lovers-39.mp3", title: "Latin Lovers" },
+            { src: "audio/mixkit-cat-walk-371.mp3", title: "Cat Walk" },
+            { src: "audio/mixkit-cant-get-you-off-my-mind-1210.mp3", title: "Can't Get You Off My Mind" },
+            { src: "audio/mixkit-pop-05-695.mp3", title: "Pop 05" },
+            { src: "audio/mixkit-complicated-281.mp3", title: "Complicated" },
+            { src: "audio/mixkit-villa-penthouse-339.mp3", title: "Villa Penthouse" },
         ],
         evening: [
-            { src: "audio/evening-chill-1.wav", title: "Evening Chill 1" },
-            { src: "audio/evening-chill-2.wav", title: "Evening Chill 2" },
-            { src: "audio/evening-chill-3.wav", title: "Evening Chill 3" },
+            { src: "audio/mixkit-forest-treasure-138.mp3", title: "Forest Treasure" },
+            { src: "audio/mixkit-relaxing-in-nature-522.mp3", title: "Relaxing in Nature" },
+            { src: "audio/mixkit-romantic-659.mp3", title: "Romantic" },
+            { src: "audio/mixkit-romantic-01-752.mp3", title: "Romantic 01" },
+            { src: "audio/mixkit-romantic-05-759.mp3", title: "Romantic 05" },
+            { src: "audio/mixkit-wedding-01-657.mp3", title: "Wedding 01" },
+            { src: "audio/mixkit-serene-view-443.mp3", title: "Serene View" },
         ],
         night: [
-            { src: "audio/night-ambient-1.wav", title: "Night Ambient 1" },
-            { src: "audio/night-ambient-2.wav", title: "Night Ambient 2" },
-            { src: "audio/night-ambient-3.wav", title: "Night Ambient 3" },
+            { src: "audio/mixkit-night-sky-hip-hop-970.mp3", title: "Night Sky Hip Hop" },
+            { src: "audio/mixkit-silent-descent-614.mp3", title: "Silent Descent" },
+            { src: "audio/mixkit-deep-urban-623.mp3", title: "Deep Urban" },
+            { src: "audio/mixkit-dirty-thinkin-989.mp3", title: "Dirty Thinkin" },
+            { src: "audio/mixkit-cbpd-400.mp3", title: "CBPD 400" },
+            { src: "audio/mixkit-praise-the-lord-262.mp3", title: "Praise the Lord" },
         ],
         rainy: [
-            { src: "audio/rainy-soft-1.wav", title: "Rainy Soft 1" },
-            { src: "audio/rainy-soft-2.wav", title: "Rainy Soft 2" },
-            { src: "audio/rainy-soft-3.wav", title: "Rainy Soft 3" },
+            { src: "audio/mixkit-praise-the-lord-262.mp3", title: "Praise the Lord" },
+            { src: "audio/mixkit-beautiful-dream-493.mp3", title: "Beautiful Dream" },
+            { src: "audio/mixkit-serene-view-443.mp3", title: "Serene View" },
+            { src: "audio/mixkit-relaxing-in-nature-522.mp3", title: "Relaxing in Nature" },
+            { src: "audio/mixkit-forest-treasure-138.mp3", title: "Forest Treasure" },
         ],
         storm: [
-            { src: "audio/storm-calm-1.wav", title: "Storm Calm 1" },
-            { src: "audio/storm-calm-2.wav", title: "Storm Calm 2" },
+            { src: "audio/mixkit-epical-drums-01-676.mp3", title: "Epical Drums" },
+            { src: "audio/mixkit-fright-night-871.mp3", title: "Fright Night" },
+            { src: "audio/mixkit-piano-horror-671.mp3", title: "Piano Horror" },
+            { src: "audio/mixkit-sports-highlights-51.mp3", title: "Sports Highlights" },
         ],
     };
 
     const state = {
         enabled: false,
         volume: 0.25,
+        hidden: false,
         weatherCode: null,
         currentPool: [],
         currentPoolKey: "",
@@ -164,7 +189,7 @@
         wrap.innerHTML = `
             <div class="ambient-player-head">
                 <div>
-                    <div class="ambient-player-title">Adaptive Music</div>
+                    <div class="ambient-player-title">GMBF Adaptive Music</div>
                     <div class="ambient-player-sub">Myanmar time + weather based</div>
                 </div>
                 <div class="ambient-player-controls">
@@ -174,6 +199,9 @@
                     <button type="button" class="ambient-btn" id="ambientNextBtn" title="Next track">
                         <i class="fa-solid fa-forward" aria-hidden="true"></i>
                     </button>
+                    <button type="button" class="ambient-btn ambient-btn-close" id="ambientCloseBtn" title="Hide player">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
             <div class="ambient-volume">
@@ -182,6 +210,21 @@
             <div class="ambient-status" id="ambientStatus">Music is off. Tap Play to enable.</div>
         `;
         document.body.appendChild(wrap);
+
+        const reopen = document.createElement("button");
+        reopen.type = "button";
+        reopen.className = "ambient-reopen";
+        reopen.id = "ambientReopenBtn";
+        reopen.innerHTML = '<i class="fa-solid fa-music" aria-hidden="true"></i><span>Music</span>';
+        reopen.setAttribute("aria-label", "Reopen music player");
+        document.body.appendChild(reopen);
+
+        const toast = document.createElement("div");
+        toast.className = "ambient-toast";
+        toast.id = "ambientToast";
+        toast.setAttribute("role", "status");
+        toast.setAttribute("aria-live", "polite");
+        document.body.appendChild(toast);
     }
 
     function updateStatus(text) {
@@ -200,6 +243,39 @@
     function setEnabled(enabled) {
         state.enabled = enabled;
         writeLocal(STORAGE.enabled, enabled ? "1" : "0");
+    }
+
+    function setHidden(hidden) {
+        state.hidden = hidden;
+        writeLocal(STORAGE.hidden, hidden ? "1" : "0");
+        const player = document.querySelector(".ambient-player");
+        const reopen = document.getElementById("ambientReopenBtn");
+        if (player) player.classList.toggle("is-hidden", hidden);
+        if (reopen) reopen.classList.toggle("is-visible", hidden);
+    }
+
+    function weatherLabel(bucket) {
+        if (bucket === "storm") return "storm";
+        if (bucket === "rainy") return "rainy";
+        return "clear";
+    }
+
+    function periodLabel(period) {
+        if (period === "morning") return "morning";
+        if (period === "day") return "daytime";
+        if (period === "evening") return "evening";
+        return "night";
+    }
+
+    function showToast(text) {
+        const toast = document.getElementById("ambientToast");
+        if (!toast) return;
+        toast.textContent = text;
+        toast.classList.add("is-visible");
+        window.clearTimeout(showToast._timer);
+        showToast._timer = window.setTimeout(() => {
+            toast.classList.remove("is-visible");
+        }, 3200);
     }
 
     function pickNextTrack() {
@@ -235,6 +311,11 @@
             await state.audio.play();
             updatePlayButton(true);
             updateStatus(`Now playing: ${track.title}`);
+            const period = periodFromHour(mmHour());
+            const bucket = weatherBucket(state.weatherCode);
+            showToast(
+                `Music is playing according to Myanmar ${periodLabel(period)} and ${weatherLabel(bucket)} weather.`
+            );
         } catch {
             updatePlayButton(false);
             updateStatus(
@@ -246,6 +327,8 @@
     function wireControls() {
         const playBtn = document.getElementById("ambientPlayBtn");
         const nextBtn = document.getElementById("ambientNextBtn");
+        const closeBtn = document.getElementById("ambientCloseBtn");
+        const reopenBtn = document.getElementById("ambientReopenBtn");
         const volume = document.getElementById("ambientVolume");
 
         if (volume) {
@@ -276,6 +359,18 @@
                 state.startedByUser = true;
                 setEnabled(true);
                 await playTrack();
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener("click", () => {
+                setHidden(true);
+            });
+        }
+
+        if (reopenBtn) {
+            reopenBtn.addEventListener("click", () => {
+                setHidden(false);
             });
         }
     }
@@ -315,8 +410,10 @@
         state.audio.volume = Number(readLocal(STORAGE.volume, "0.25"));
         state.volume = state.audio.volume;
         state.enabled = readLocal(STORAGE.enabled, "0") === "1";
+        state.hidden = readLocal(STORAGE.hidden, "0") === "1";
 
         wireControls();
+        setHidden(state.hidden);
         wireAudioEvents();
         updatePlayButton(false);
         updateStatus(

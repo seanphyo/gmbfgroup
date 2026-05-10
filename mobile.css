@@ -19,7 +19,18 @@
     .ambient-player {
         left: 10px;
         bottom: 10px;
-        width: min(320px, calc(100vw - 20px));
+        width: min(280px, calc(100vw - 102px));
+    }
+
+    .ambient-reopen {
+        left: 10px;
+        bottom: 10px;
+    }
+
+    .ambient-toast {
+        left: 10px;
+        bottom: 130px;
+        max-width: min(300px, calc(100vw - 110px));
     }
 
     header.site-header.nav-open {

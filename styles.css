@@ -92,7 +92,7 @@ header.site-header {
     position: fixed;
     left: 16px;
     bottom: 16px;
-    z-index: 10020;
+    z-index: 1000;
     width: min(320px, calc(100vw - 32px));
     border-radius: 14px;
     padding: 12px 12px 10px;
@@ -100,6 +100,10 @@ header.site-header {
     border: 1px solid rgba(15, 23, 42, 0.12);
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
     backdrop-filter: blur(8px);
+}
+
+.ambient-player.is-hidden {
+    display: none;
 }
 
 .ambient-player-head {
@@ -145,6 +149,10 @@ header.site-header {
     box-shadow: 0 6px 12px rgba(15, 23, 42, 0.12);
 }
 
+.ambient-btn-close {
+    color: #475569;
+}
+
 .ambient-btn-main {
     width: auto;
     padding: 0 12px;
@@ -173,6 +181,54 @@ header.site-header {
     color: #475569;
     line-height: 1.35;
     min-height: 2.1em;
+}
+
+.ambient-reopen {
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    z-index: 1001;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(15, 23, 42, 0.14);
+    background: rgba(255, 255, 255, 0.95);
+    color: #0f172a;
+    border-radius: 999px;
+    padding: 10px 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.16);
+    cursor: pointer;
+}
+
+.ambient-reopen.is-visible {
+    display: inline-flex;
+}
+
+.ambient-toast {
+    position: fixed;
+    left: 16px;
+    bottom: 148px;
+    z-index: 1002;
+    max-width: min(380px, calc(100vw - 32px));
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background: rgba(15, 23, 42, 0.9);
+    color: #f8fafc;
+    font-size: 0.78rem;
+    line-height: 1.35;
+    box-shadow: 0 10px 24px rgba(2, 6, 23, 0.35);
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.ambient-toast.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .logo {
@@ -2484,6 +2540,12 @@ body.theme-night .ambient-btn {
     background: #1e293b;
     color: #e2e8f0;
     border-color: rgba(148, 163, 184, 0.28);
+}
+
+body.theme-night .ambient-reopen {
+    background: rgba(15, 23, 42, 0.92);
+    color: #e2e8f0;
+    border-color: rgba(148, 163, 184, 0.3);
 }
 
 body.theme-night .services-grid {
