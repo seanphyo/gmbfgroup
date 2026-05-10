@@ -1833,6 +1833,39 @@ body.theme-night .trust-logos-track span:hover {
     line-height: 1.55;
 }
 
+.professional-services-section {
+    margin-top: 8px;
+}
+
+.pro-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+.pro-service-card {
+    background: var(--color-white);
+    border: 1px solid #e5eaf3;
+    border-radius: 12px;
+    padding: 22px 22px 20px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.07);
+    border-top: 4px solid var(--color-secondary);
+}
+
+.pro-service-card h3 {
+    font-size: 1.12em;
+    color: var(--color-primary);
+    margin: 0 0 10px;
+    text-align: left;
+}
+
+.pro-service-card p {
+    margin: 0;
+    color: #555;
+    line-height: 1.58;
+    font-size: 0.95em;
+}
+
 .products-outro {
     text-align: center;
     padding: 28px 20px 10px;
@@ -2403,7 +2436,8 @@ body.theme-night .products-toc a:focus-visible {
 body.theme-night .solution-pillar h3,
 body.theme-night .product-showcase-card h3,
 body.theme-night .partner-point h3,
-body.theme-night .zoho-detail-card h3 {
+body.theme-night .zoho-detail-card h3,
+body.theme-night .pro-service-card h3 {
     color: #f8fafc;
 }
 
@@ -2411,7 +2445,8 @@ body.theme-night .solution-pillar p,
 body.theme-night .product-showcase-card p,
 body.theme-night .partner-point p,
 body.theme-night .zoho-detail-card p,
-body.theme-night .cloud-aside p {
+body.theme-night .cloud-aside p,
+body.theme-night .pro-service-card p {
     color: #cbd5e1;
 }
 
@@ -2435,7 +2470,8 @@ body.theme-night .partner-outlook,
 body.theme-night .it-solutions-intro,
 body.theme-night .platforms-showcase,
 body.theme-night .cloud-solutions-detail,
-body.theme-night .ai-solutions-section {
+body.theme-night .ai-solutions-section,
+body.theme-night .professional-services-section {
     background: #0f172a;
 }
 
