@@ -42,6 +42,8 @@
         volume: 0.25,
         weatherCode: null,
         currentPool: [],
+        currentPoolKey: "",
+        queue: [],
         currentIndex: -1,
         audio: null,
         startedByUser: false,
@@ -127,8 +129,33 @@
     function choosePool() {
         const period = periodFromHour(mmHour());
         const bucket = weatherBucket(state.weatherCode);
-        if (bucket && TRACKS[bucket]?.length) return TRACKS[bucket];
-        return TRACKS[period] || TRACKS.day;
+        const mixedBase = [...TRACKS.morning, ...TRACKS.day, ...TRACKS.night];
+        if (bucket && TRACKS[bucket]?.length) {
+            return dedupeTracks([...TRACKS[bucket], ...mixedBase]);
+        }
+        // Keep variety high and skip evening set per feedback.
+        if (period === "evening") {
+            return dedupeTracks([...TRACKS.night, ...TRACKS.day, ...TRACKS.morning]);
+        }
+        return dedupeTracks([...(TRACKS[period] || TRACKS.day), ...mixedBase]);
+    }
+
+    function dedupeTracks(tracks) {
+        const seen = new Set();
+        return tracks.filter((track) => {
+            if (seen.has(track.src)) return false;
+            seen.add(track.src);
+            return true;
+        });
+    }
+
+    function shuffleTracks(tracks) {
+        const arr = tracks.slice();
+        for (let i = arr.length - 1; i > 0; i -= 1) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
     }
 
     function createPlayerUI() {
@@ -178,16 +205,23 @@
     function pickNextTrack() {
         state.currentPool = choosePool();
         if (!state.currentPool.length) return null;
-        if (state.currentPool.length === 1) {
-            state.currentIndex = 0;
-            return state.currentPool[0];
+        const key = state.currentPool.map((track) => track.src).join("|");
+        if (state.currentPoolKey !== key || !state.queue.length) {
+            state.currentPoolKey = key;
+            state.queue = shuffleTracks(state.currentPool);
+            // Avoid repeating the exact last track at queue boundaries.
+            if (state.queue.length > 1 && state.currentIndex >= 0) {
+                const lastTrack = state.currentPool[state.currentIndex];
+                if (lastTrack && state.queue[0].src === lastTrack.src) {
+                    state.queue.push(state.queue.shift());
+                }
+            }
         }
-        let idx = Math.floor(Math.random() * state.currentPool.length);
-        if (idx === state.currentIndex) {
-            idx = (idx + 1) % state.currentPool.length;
-        }
+        const next = state.queue.shift();
+        if (!next) return null;
+        const idx = state.currentPool.findIndex((track) => track.src === next.src);
         state.currentIndex = idx;
-        return state.currentPool[idx];
+        return next;
     }
 
     async function playTrack() {
