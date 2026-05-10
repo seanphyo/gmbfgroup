@@ -4,68 +4,251 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Products &amp; Services | GMBF Group</title>
-        <meta name="description" content="Explore GMBF Group products and services for travel, logistics, commerce, and digital operations.">
-        <link rel="stylesheet" href="styles.css?v=20260503-3">
+        <meta name="description" content="GMBF IT Solutions: cloud platforms, AI with Shwe AI, BNF Express, BNF Event, Book Myanmar Hotels, KBZ Pay Mini Programs, and Linnyone4 logistics.">
+        <link rel="stylesheet" href="styles.css?v=20260510-4">
+        <link rel="stylesheet" href="mobile.css?v=20260510-4">
         <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
             rel="stylesheet">
     </head>
     <body class="products-services-page">
-        <header>
-            <div class="logo">
-                <a href="index.html" class="logo-link" aria-label="GMBF Group home">
-                    <img src="logo.png" alt="GMBF Group Logo" class="header-logo">
-                </a>
+        <header class="site-header">
+            <div class="header-bar">
+                <div class="logo">
+                    <a href="index.html" class="logo-link" aria-label="GMBF Group home">
+                        <img src="logo.png" alt="GMBF Group Logo" class="header-logo">
+                    </a>
+                </div>
+                <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </button>
+                <nav id="primary-nav" aria-label="Primary navigation">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#about">About Us</a>
+                    <a href="products-services.html" aria-current="page">Products &amp; Services</a>
+                    <a href="clients-partners.html">Clients &amp; Partners</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="index.html#contact" class="cta-button">Contact Us</a>
+                </nav>
             </div>
-            <nav>
-                <a href="index.html#home">Home</a>
-                <a href="index.html#about">About Us</a>
-                <a href="products-services.html" aria-current="page">Products &amp; Services</a>
-                <a href="clients-partners.html">Clients &amp; Partners</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="index.html#contact" class="cta-button">Contact Us</a>
-            </nav>
         </header>
+        <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true" tabindex="-1"></div>
 
         <main>
             <section class="content-section products-services-hero">
-                <h1>Products &amp; Services</h1>
+                <h1>Our Products &amp; Services</h1>
                 <p class="products-services-lead">
-                    We build practical digital products and provide strategic services
-                    to help businesses scale operations, improve customer experience,
-                    and accelerate growth across Southeast Asia.
+                    <strong>GMBF IT Solutions</strong> delivers cloud-ready platforms, integrations,
+                    and AI-powered experiences for travel, hospitality, events, payments, and logistics.
+                    Explore where we operate, how we deliver value, and the products our teams build and run every day.
                 </p>
+                <nav class="products-toc" aria-label="On this page">
+                    <a href="#sectors">Business sectors</a>
+                    <a href="#it-solutions">IT solutions</a>
+                    <a href="#cloud-solutions">Cloud solutions</a>
+                    <a href="#platforms">Platforms &amp; products</a>
+                    <a href="#ai-solutions">AI solutions</a>
+                    <a href="#partner-with-us">Work with us</a>
+                </nav>
             </section>
 
-            <section class="content-section products-grid">
-                <h2 class="products-services-section-title">Our Products</h2>
-                <div class="service-card">
-                    <h4>Travel Booking Platform</h4>
-                    <p>End-to-end booking ecosystem for bus, hotel, railway, and airline operations.</p>
-                </div>
-                <div class="service-card">
-                    <h4>E-commerce Platform</h4>
-                    <p>Online commerce foundation with catalog, checkout, payments, and order workflow support.</p>
-                </div>
-                <div class="service-card">
-                    <h4>AI-commerce Suite</h4>
-                    <p>AI-powered tools for marketing, sales, and operational decision-making.</p>
+            <section id="sectors" class="content-section sectors-section">
+                <h2 class="products-services-section-title">Business sectors &amp; services</h2>
+                <p class="sectors-intro">
+                    We align technology with sector-specific workflows—from ticketing and reservations to enrollment,
+                    payments inside super-app ecosystems, and international cargo—so operations stay reliable as you scale.
+                </p>
+                <div class="sectors-grid">
+                    <article class="sector-card">
+                        <h3>Travel &amp; mobility</h3>
+                        <p>Online ticketing, route inventory, customer notifications, and connected booking journeys for bus, flight, and multi-modal travel.</p>
+                    </article>
+                    <article class="sector-card">
+                        <h3>Hospitality &amp; tourism</h3>
+                        <p>Hotel distribution, availability, and booking flows tailored for Myanmar and regional travelers with secure checkout.</p>
+                    </article>
+                    <article class="sector-card">
+                        <h3>Events &amp; enrollment</h3>
+                        <p>Event discovery, ticket sales, and enrollment-style journeys that keep organizers and attendees aligned from signup to check-in.</p>
+                    </article>
+                    <article class="sector-card">
+                        <h3>Payments &amp; super apps</h3>
+                        <p>Mini-program style experiences inside leading wallets—travel utilities, booking assistants, and merchant-ready integrations.</p>
+                    </article>
+                    <article class="sector-card">
+                        <h3>Cargo &amp; logistics</h3>
+                        <p>Tracking, branch operations, and customer-facing tools that support domestic and international shipment workflows.</p>
+                    </article>
+                    <article class="sector-card">
+                        <h3>AI &amp; automation</h3>
+                        <p>Assistants and intelligent workflows that reduce manual effort across customer touchpoints and internal operations.</p>
+                    </article>
                 </div>
             </section>
 
-            <section class="content-section services-grid">
-                <h2 class="products-services-section-title">Our Services</h2>
-                <div class="service-card">
-                    <h4>Cargo &amp; Logistics Solutions</h4>
-                    <p>Streamlined cargo operations, fleet visibility, and supply chain management support.</p>
+            <section id="it-solutions" class="content-section it-solutions-intro section-surface">
+                <h2 class="products-services-section-title">GMBF IT Solutions</h2>
+                <p class="it-solutions-lead">
+                    Our practice combines <strong>cloud solutions</strong> (hosted products, integrations, and ongoing operations)
+                    with <strong>AI solutions</strong> that make teams faster and customer interactions sharper—especially where Southeast Asian markets demand resilience and local context.
+                </p>
+                <div class="solution-pillars">
+                    <article class="solution-pillar">
+                        <h3>Cloud solutions</h3>
+                        <p>
+                            Design-through-run delivery: scalable hosting patterns, secure integrations with banks and partners,
+                            APIs for inventory and payments, and continuous improvements aligned with your roadmap.
+                        </p>
+                    </article>
+                    <article class="solution-pillar">
+                        <h3>AI solutions</h3>
+                        <p>
+                            Practical automation and conversational experiences powered by <strong>Shwe AI</strong>—built for real-world operations,
+                            not demos—from customer engagement to internal productivity.
+                        </p>
+                    </article>
                 </div>
-                <div class="service-card">
-                    <h4>Payment Integration</h4>
-                    <p>Secure integration with local and international payment channels.</p>
+            </section>
+
+            <section id="cloud-solutions" class="content-section cloud-solutions-detail">
+                <h2 class="products-services-section-title">Cloud solutions — what we deliver</h2>
+                <div class="cloud-split">
+                    <div>
+                        <p class="cloud-lead">
+                            Under cloud solutions we operate both <strong>integrated partner ecosystems</strong> (payments, carriers, OTAs)
+                            and <strong>our own product lines</strong> listed below—maintained as living platforms with monitoring, releases, and support discipline.
+                        </p>
+                        <ul class="cloud-capabilities">
+                            <li>Secure, scalable application hosting and release management</li>
+                            <li>Payment routing, reconciliation patterns, and wallet-ready UX</li>
+                            <li>Inventory, scheduling, and booking engines aligned to operator workflows</li>
+                            <li><strong>KBZ Pay Mini Program</strong> solutions—travel tools, booking flows, and merchant journeys inside Myanmar’s leading super-app ecosystem</li>
+                            <li>Third-party APIs, partner onboarding, and operational dashboards</li>
+                        </ul>
+                    </div>
+                    <aside class="cloud-aside" aria-label="Summary">
+                        <p>
+                            Whether you need a white-label integration or a branded consumer product, we map the same engineering rigor to uptime,
+                            data handling, and customer trust.
+                        </p>
+                    </aside>
                 </div>
-                <div class="service-card">
-                    <h4>Marketing &amp; Rewards Programs</h4>
-                    <p>Loyalty and campaign solutions to increase retention and customer lifetime value.</p>
+            </section>
+
+            <section id="platforms" class="content-section platforms-showcase section-surface">
+                <h2 class="products-services-section-title">Platforms &amp; own products</h2>
+                <p class="platforms-intro">
+                    These are representative offerings from our cloud portfolio—consumer-facing brands and operator-grade systems our teams design, ship, and operate.
+                </p>
+                <div class="product-showcase-grid">
+                    <article class="product-showcase-card">
+                        <div class="product-showcase-logo product-showcase-logo--tray" role="img" aria-label="BNF Express logo">
+                            <img src="images/logo-bnf-express.png" alt="" width="200" height="80" loading="lazy" decoding="async">
+                        </div>
+                        <h3>BNF Express</h3>
+                        <p class="product-showcase-tagline">Flight &amp; bus ticketing · end-to-end travel booking</p>
+                        <p>
+                            <strong>BNF Express</strong> is our travel commerce platform for Myanmar and regional routes—supporting bus and flight bookings,
+                            payments, and customer notifications through a unified online experience familiar to travelers and agents alike.
+                        </p>
+                        <a href="https://bnfexpress.com/" class="product-showcase-link" target="_blank" rel="noopener noreferrer">Visit bnfexpress.com</a>
+                    </article>
+
+                    <article class="product-showcase-card">
+                        <div class="product-showcase-logo product-showcase-logo--tray" role="img" aria-label="BNF Event logo">
+                            <img src="images/logo-bnf-event.png" alt="" width="200" height="80" loading="lazy" decoding="async">
+                        </div>
+                        <h3>BNF Event</h3>
+                        <p class="product-showcase-tagline">Events · ticketing · enrollment-ready journeys</p>
+                        <p>
+                            <strong>BNF Event</strong> powers discovery, registration, and ticket purchase for festivals, entertainment, and organized experiences—structured so organizers can manage attendees from promotion through check-in.
+                        </p>
+                        <a href="https://www.bnfevent.com/" class="product-showcase-link" target="_blank" rel="noopener noreferrer">Explore bnfevent.com</a>
+                    </article>
+
+                    <article class="product-showcase-card product-showcase-card--accent">
+                        <div class="mini-program-badge" aria-hidden="true">KBZ Pay</div>
+                        <h3>KBZ Pay Mini App solutions</h3>
+                        <p class="product-showcase-tagline">Travel · booking · wallet-native experiences</p>
+                        <p>
+                            We build and operate <strong>Mini Program</strong> experiences for KBZ Pay—covering travel utilities, booking paths,
+                            and merchant workflows so users complete tasks inside the super app they already trust.
+                        </p>
+                        <p class="product-showcase-note">Engagements vary by program; <a href="index.html#contact">contact us</a> to scope your Mini App initiative.</p>
+                    </article>
+
+                    <article class="product-showcase-card">
+                        <div class="product-showcase-logo product-showcase-logo--tray product-showcase-logo--hotel" role="img" aria-label="Book Myanmar Hotels logo">
+                            <img src="images/logo-book-myanmar-hotels.jpg" alt="" width="280" height="120" loading="lazy" decoding="async">
+                        </div>
+                        <h3>Book Myanmar Hotels</h3>
+                        <p class="product-showcase-tagline">Hotel booking platform · Myanmar &amp; regional stays</p>
+                        <p>
+                            <strong>Book Myanmar Hotels</strong> focuses on hotel inventory and guest-friendly booking for Myanmar destinations,
+                            with support-oriented service and secure checkout—ideal for travelers planning stays across key cities and resorts.
+                        </p>
+                        <a href="https://bookmyanmarhotels.com/" class="product-showcase-link" target="_blank" rel="noopener noreferrer">Visit bookmyanmarhotels.com</a>
+                    </article>
+
+                    <article class="product-showcase-card">
+                        <div class="product-showcase-logo product-showcase-logo--tray" role="img" aria-label="Linnyone 4 logo">
+                            <img src="images/logo-linnyone4.png" alt="" width="220" height="72" loading="lazy" decoding="async">
+                        </div>
+                        <h3>Linnyone 4</h3>
+                        <p class="product-showcase-tagline">Cargo · logistics · tracking</p>
+                        <p>
+                            <strong>Linnyone 4</strong> is our cargo and logistics product line—supporting branches, customer tracking, and international shipment journeys with operational tooling developed by GMBF Group.
+                        </p>
+                        <a href="https://linnyone4.com/" class="product-showcase-link" target="_blank" rel="noopener noreferrer">Visit linnyone4.com</a>
+                    </article>
+                </div>
+            </section>
+
+            <section id="ai-solutions" class="content-section ai-solutions-section">
+                <h2 class="products-services-section-title">AI solutions — Shwe AI</h2>
+                <div class="ai-split">
+                    <div class="ai-brand">
+                        <div class="product-showcase-logo product-showcase-logo--ai">
+                            <img src="images/logo-shwe-ai.png" alt="Shwe AI logo" width="280" height="140" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <div class="ai-copy">
+                        <p class="ai-lead">
+                            <strong>Shwe AI</strong> is our AI brand for assistants, automation, and intelligent workflows layered onto the same platforms we host in the cloud—so insights and responses stay grounded in your products and policies.
+                        </p>
+                        <ul class="ai-benefits">
+                            <li>Customer-facing assistance tuned to travel, hospitality, and service contexts</li>
+                            <li>Operational automation—routing, drafting, and summarization for busy teams</li>
+                            <li>Responsible rollout patterns: evaluation, monitoring, and iterative improvement</li>
+                        </ul>
+                        <p class="ai-footnote">
+                            Pair Shwe AI with BNF Express, BNF Event, Book Myanmar Hotels, Linnyone 4, or your own stack—we integrate where your customers already engage.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="partner-with-us" class="content-section partner-outlook">
+                <h2 class="products-services-section-title">How we work with you</h2>
+                <div class="partner-grid">
+                    <article class="partner-point">
+                        <h3>Discovery &amp; architecture</h3>
+                        <p>We translate sector requirements into durable architecture—security, integrations, and growth paths included.</p>
+                    </article>
+                    <article class="partner-point">
+                        <h3>Build &amp; integrate</h3>
+                        <p>Ship features alongside partner APIs, wallets, and carriers so booking, payment, and logistics data stay consistent.</p>
+                    </article>
+                    <article class="partner-point">
+                        <h3>Operate &amp; improve</h3>
+                        <p>Monitor releases, tune conversion and reliability, and evolve AI and cloud capabilities as your market shifts.</p>
+                    </article>
+                </div>
+                <div class="products-outro">
+                    <p>Ready to align technology with your sector roadmap?</p>
+                    <a href="index.html#contact" class="main-cta">Contact GMBF Group</a>
                 </div>
             </section>
         </main>
@@ -86,6 +269,7 @@
                 </div>
             </div>
         </footer>
-        <script src="chat.js?v=20260503-3"></script>
+        <script src="nav.js?v=20260510-4"></script>
+        <script src="chat.js?v=20260510-4"></script>
     </body>
 </html>

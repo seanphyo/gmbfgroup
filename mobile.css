@@ -1,0 +1,264 @@
+/*
+ * GMBF Group — mobile & tablet responsive layer
+ * Load after styles.css. Keeps touch-friendly nav, hero scaling, and widget layout.
+ */
+
+@media (max-width: 992px) {
+    /* ——— Drawer navigation ——— */
+    .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header.site-header.nav-open {
+        z-index: 1000;
+    }
+
+    header nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: min(320px, 88vw);
+        max-width: 100%;
+        margin: 0;
+        padding: 76px 16px 28px;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 6px;
+        background: #ffffff;
+        box-shadow: -16px 0 48px rgba(15, 23, 42, 0.2);
+        transform: translateX(100%);
+        transition: transform 0.34s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        z-index: 1001;
+        border-left: 1px solid #e8edf5;
+    }
+
+    body.menu-open header nav {
+        transform: translateX(0);
+    }
+
+    header nav a:not(.cta-button) {
+        justify-content: flex-start;
+        padding: 14px 16px;
+        border-radius: 12px;
+        font-size: 0.95rem;
+        animation: none;
+    }
+
+    header nav .cta-button {
+        margin-left: 0;
+        margin-top: 16px;
+        margin-bottom: 8px;
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: rgba(15, 23, 42, 0.48);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        cursor: pointer;
+    }
+
+    body.menu-open .nav-backdrop {
+        display: block;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+        overscroll-behavior: contain;
+    }
+
+    /* ——— Hero / home slider ——— */
+    .hero-container {
+        height: min(92vh, 680px);
+        min-height: 380px;
+    }
+
+    .hero-content {
+        justify-content: flex-end;
+        align-items: center;
+        padding: 56px 5% 96px;
+        box-sizing: border-box;
+        background: linear-gradient(
+            165deg,
+            rgba(15, 23, 42, 0.88) 0%,
+            rgba(22, 32, 62, 0.72) 55%,
+            rgba(15, 23, 42, 0.55) 100%
+        );
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.42rem, 5.4vw, 2rem);
+        line-height: 1.18;
+        margin-bottom: 10px;
+    }
+
+    .hero-content h2 {
+        font-size: clamp(0.88rem, 3.5vw, 1.08rem);
+        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+
+    .tagline {
+        font-size: 0.68rem;
+        letter-spacing: 1.4px;
+        margin-bottom: 8px;
+    }
+
+    .hero-cta-row {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 28px;
+        gap: 10px;
+    }
+
+    .main-cta {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 18px;
+        text-align: center;
+        font-size: 0.95rem;
+    }
+
+    .slide-dots {
+        bottom: max(14px, env(safe-area-inset-bottom, 14px));
+        z-index: 36;
+        padding-bottom: 2px;
+    }
+
+    .dot {
+        height: 11px;
+        width: 11px;
+        margin: 0 4px;
+    }
+
+    .prev,
+    .next {
+        padding: 11px 10px;
+        font-size: 15px;
+        margin-top: -20px;
+    }
+
+    /* ——— Trust strip ——— */
+    .trust-strip {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 5%;
+    }
+
+    .trust-logos {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    /* ——— Products page TOC pills ——— */
+    .products-toc {
+        gap: 8px 10px;
+        padding: 0 4px;
+    }
+
+    .products-toc a {
+        font-size: 0.78rem;
+        padding: 8px 12px;
+    }
+
+    /* ——— AI chat: compact, no animated ring (avoids overlap artifacts) ——— */
+    .gmbf-assist {
+        right: max(12px, env(safe-area-inset-right, 12px));
+        bottom: max(12px, env(safe-area-inset-bottom, 12px));
+        z-index: 1100;
+    }
+
+    .gmbf-assist-toggle {
+        min-width: 0;
+        max-width: calc(100vw - 24px);
+        padding: 11px 14px;
+        border-radius: 999px;
+        gap: 8px;
+    }
+
+    .gmbf-assist-toggle-text strong {
+        font-size: 0.76rem;
+        line-height: 1.3;
+    }
+
+    .gmbf-assist-panel {
+        width: min(360px, calc(100vw - 20px));
+    }
+
+    .gmbf-assist-form button {
+        flex-shrink: 0;
+    }
+
+    /* Inner pages — headings */
+    .products-services-hero h1,
+    .clients-page-hero h1 {
+        font-size: clamp(1.42rem, 5vw, 1.9rem);
+        line-height: 1.2;
+    }
+
+    .products-services-lead,
+    .clients-page-lead {
+        font-size: 0.96rem;
+        padding: 0 4px;
+    }
+
+    .policy-wrapper {
+        margin-left: 4%;
+        margin-right: 4%;
+        padding: 22px 16px 36px;
+    }
+
+    .policy-wrapper h1 {
+        font-size: 1.35rem;
+        line-height: 1.28;
+    }
+}
+
+/* Very narrow phones: FAB-style assistant */
+@media (max-width: 380px) {
+    .gmbf-assist-toggle-text {
+        display: none;
+    }
+
+    .gmbf-assist-toggle {
+        width: 54px;
+        height: 54px;
+        min-width: 0;
+        padding: 0;
+        border-radius: 50%;
+        justify-content: center;
+    }
+
+    .gmbf-assist-avatar {
+        width: 30px;
+        height: 30px;
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 993px) {
+    .nav-backdrop {
+        display: none !important;
+    }
+}
