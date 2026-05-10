@@ -88,6 +88,93 @@ header.site-header {
     outline-offset: 2px;
 }
 
+.ambient-player {
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    z-index: 10020;
+    width: min(320px, calc(100vw - 32px));
+    border-radius: 14px;
+    padding: 12px 12px 10px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+    backdrop-filter: blur(8px);
+}
+
+.ambient-player-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.ambient-player-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.ambient-player-sub {
+    font-size: 0.74rem;
+    color: #64748b;
+}
+
+.ambient-player-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ambient-btn {
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background: #ffffff;
+    color: #1f2937;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.ambient-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(15, 23, 42, 0.12);
+}
+
+.ambient-btn-main {
+    width: auto;
+    padding: 0 12px;
+    gap: 7px;
+    background: linear-gradient(165deg, #14c896 0%, var(--color-secondary) 45%, #0ea876 100%);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+    font-weight: 700;
+}
+
+.ambient-btn-main span {
+    font-size: 0.77rem;
+}
+
+.ambient-volume {
+    margin-top: 8px;
+}
+
+.ambient-volume input {
+    width: 100%;
+}
+
+.ambient-status {
+    margin-top: 8px;
+    font-size: 0.75rem;
+    color: #475569;
+    line-height: 1.35;
+    min-height: 2.1em;
+}
+
 .logo {
     flex-shrink: 0;
 }
@@ -2376,6 +2463,27 @@ body.theme-night .logo-badge {
     background: rgba(148, 163, 184, 0.14);
     border-color: rgba(148, 163, 184, 0.36);
     color: #e2e8f0;
+}
+
+body.theme-night .ambient-player {
+    background: rgba(15, 23, 42, 0.9);
+    border-color: rgba(148, 163, 184, 0.3);
+    box-shadow: 0 14px 32px rgba(2, 6, 23, 0.48);
+}
+
+body.theme-night .ambient-player-title {
+    color: #f8fafc;
+}
+
+body.theme-night .ambient-player-sub,
+body.theme-night .ambient-status {
+    color: #cbd5e1;
+}
+
+body.theme-night .ambient-btn {
+    background: #1e293b;
+    color: #e2e8f0;
+    border-color: rgba(148, 163, 184, 0.28);
 }
 
 body.theme-night .services-grid {

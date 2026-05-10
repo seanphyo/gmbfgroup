@@ -16,6 +16,12 @@
         height: 40px;
     }
 
+    .ambient-player {
+        left: 10px;
+        bottom: 10px;
+        width: min(320px, calc(100vw - 20px));
+    }
+
     header.site-header.nav-open {
         z-index: 10040;
     }
