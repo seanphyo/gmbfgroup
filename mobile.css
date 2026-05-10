@@ -11,6 +11,11 @@
         justify-content: center;
     }
 
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
     header.site-header.nav-open {
         z-index: 10040;
     }

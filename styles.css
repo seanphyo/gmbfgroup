@@ -63,6 +63,31 @@ header.site-header {
     gap: 12px;
 }
 
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background: linear-gradient(160deg, #ffffff 0%, #eef2ff 100%);
+    color: #334155;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.14);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid rgba(59, 130, 246, 0.5);
+    outline-offset: 2px;
+}
+
 .logo {
     flex-shrink: 0;
 }
@@ -2135,6 +2160,245 @@ footer {
     background-color: #f3fbf3;
     padding: 14px 16px;
     border-radius: 6px;
+}
+
+body.theme-night {
+    background: #0b1220;
+    color: #dbe6f4;
+}
+
+body.theme-night header.site-header {
+    background: #0f172a;
+    border-bottom-color: rgba(148, 163, 184, 0.2);
+    box-shadow: 0 10px 26px rgba(2, 6, 23, 0.45);
+}
+
+body.theme-night .theme-toggle {
+    background: linear-gradient(160deg, #1e293b 0%, #0f172a 100%);
+    border-color: rgba(148, 163, 184, 0.3);
+    color: #f8fafc;
+    box-shadow: 0 4px 14px rgba(2, 6, 23, 0.45);
+}
+
+body.theme-night .logo-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+body.theme-night .header-logo {
+    filter: drop-shadow(0 2px 6px rgba(2, 6, 23, 0.45));
+}
+
+body.theme-night header nav a:not(.cta-button) {
+    color: #cbd5e1;
+}
+
+body.theme-night header nav a:not(.cta-button):hover,
+body.theme-night header nav a:not(.cta-button):focus-visible {
+    color: #f8fafc;
+}
+
+body.theme-night header nav a:not(.cta-button)::before {
+    background: linear-gradient(
+        155deg,
+        rgba(30, 41, 59, 0.92) 0%,
+        rgba(15, 23, 42, 0.9) 100%
+    );
+    border-color: rgba(148, 163, 184, 0.25);
+    box-shadow:
+        0 2px 10px rgba(2, 6, 23, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+body.theme-night header nav a:not(.cta-button):hover::before,
+body.theme-night header nav a:not(.cta-button):focus-visible::before {
+    border-color: rgba(94, 234, 212, 0.5);
+    box-shadow:
+        0 8px 20px rgba(2, 6, 23, 0.45),
+        0 0 0 1px rgba(94, 234, 212, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+body.theme-night header nav a[aria-current="page"]:not(.cta-button) {
+    color: #e6fffb;
+}
+
+body.theme-night header nav a[aria-current="page"]:not(.cta-button)::before {
+    opacity: 1;
+    transform: scale(1);
+    background: linear-gradient(
+        155deg,
+        rgba(20, 184, 166, 0.25) 0%,
+        rgba(15, 23, 42, 0.92) 100%
+    );
+    border-color: rgba(94, 234, 212, 0.55);
+    box-shadow:
+        0 10px 24px rgba(2, 6, 23, 0.5),
+        0 0 0 1px rgba(94, 234, 212, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+body.theme-night header nav a .nav-icon {
+    color: #99f6e4;
+    background: linear-gradient(155deg, rgba(45, 212, 191, 0.2) 0%, rgba(30, 41, 59, 0.55) 100%);
+}
+
+body.theme-night .cta-button {
+    background: linear-gradient(165deg, #22d3ee 0%, #14b8a6 42%, #0ea5a4 100%);
+    box-shadow:
+        0 4px 14px rgba(20, 184, 166, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+body.theme-night .cta-button:hover {
+    box-shadow:
+        0 8px 22px rgba(20, 184, 166, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+body.theme-night .content-section,
+body.theme-night .section-surface,
+body.theme-night .products-highlight,
+body.theme-night .process-section,
+body.theme-night .case-study-section,
+body.theme-night .trust-strip {
+    background-color: #0f172a;
+    color: #dbe6f4;
+}
+
+body.theme-night .about-wrapper,
+body.theme-night .partner-showcase-card,
+body.theme-night .sector-card,
+body.theme-night .service-card,
+body.theme-night .solution-pillar,
+body.theme-night .cloud-aside,
+body.theme-night .product-showcase-card,
+body.theme-night .partner-point,
+body.theme-night .zoho-detail-card,
+body.theme-night .process-step,
+body.theme-night .case-card,
+body.theme-night .contact-card,
+body.theme-night .stack-card,
+body.theme-night .zoho-partner-highlight,
+body.theme-night .zoho-partner-card,
+body.theme-night .popup-content {
+    background: #111c2f;
+    border-color: rgba(148, 163, 184, 0.22);
+    color: #dbe6f4;
+}
+
+body.theme-night p,
+body.theme-night li,
+body.theme-night .partner-showcase-desc,
+body.theme-night .sectors-intro,
+body.theme-night .clients-page-lead {
+    color: #cbd5e1;
+}
+
+body.theme-night h1,
+body.theme-night h2,
+body.theme-night h3,
+body.theme-night h4,
+body.theme-night h5,
+body.theme-night .metric {
+    color: #f8fafc;
+}
+
+body.theme-night footer {
+    background: #0b1220;
+    border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+body.theme-night .logo-badge {
+    background: rgba(148, 163, 184, 0.14);
+    border-color: rgba(148, 163, 184, 0.36);
+    color: #e2e8f0;
+}
+
+body.theme-night .services-grid {
+    background: transparent;
+}
+
+body.theme-night .products-services-page,
+body.theme-night .clients-partners-page,
+body.theme-night .zoho-standalone-page,
+body.theme-night .policy-page {
+    background-color: #0b1220;
+}
+
+body.theme-night .products-services-hero,
+body.theme-night .clients-page-hero,
+body.theme-night .zoho-standalone-hero {
+    background: transparent;
+}
+
+body.theme-night .products-services-lead,
+body.theme-night .it-solutions-lead,
+body.theme-night .platforms-intro,
+body.theme-night .cloud-lead,
+body.theme-night .ai-lead,
+body.theme-night .ai-footnote,
+body.theme-night .zoho-cross-lead,
+body.theme-night .zoho-legal-note,
+body.theme-night .cloud-capabilities,
+body.theme-night .products-outro p {
+    color: #cbd5e1;
+}
+
+body.theme-night .products-toc a {
+    color: #5eead4;
+    background-color: rgba(15, 23, 42, 0.85);
+    border-color: rgba(94, 234, 212, 0.4);
+}
+
+body.theme-night .products-toc a:hover,
+body.theme-night .products-toc a:focus-visible {
+    color: #0f172a;
+    background-color: #5eead4;
+    border-color: #5eead4;
+}
+
+body.theme-night .solution-pillar h3,
+body.theme-night .product-showcase-card h3,
+body.theme-night .partner-point h3,
+body.theme-night .zoho-detail-card h3 {
+    color: #f8fafc;
+}
+
+body.theme-night .solution-pillar p,
+body.theme-night .product-showcase-card p,
+body.theme-night .partner-point p,
+body.theme-night .zoho-detail-card p,
+body.theme-night .cloud-aside p {
+    color: #cbd5e1;
+}
+
+body.theme-night .products-highlight-more a,
+body.theme-night .clients-home-link a,
+body.theme-night .clients-page-contact-link,
+body.theme-night .product-showcase-link,
+body.theme-night .zoho-legal-note a {
+    color: #5eead4;
+}
+
+body.theme-night .products-highlight-more a:hover,
+body.theme-night .clients-home-link a:hover,
+body.theme-night .clients-page-contact-link:hover,
+body.theme-night .product-showcase-link:hover,
+body.theme-night .zoho-legal-note a:hover {
+    color: #fca5a5;
+}
+
+body.theme-night .partner-outlook,
+body.theme-night .it-solutions-intro,
+body.theme-night .platforms-showcase,
+body.theme-night .cloud-solutions-detail,
+body.theme-night .ai-solutions-section {
+    background: #0f172a;
 }
 
 
