@@ -23,6 +23,7 @@
     function applyMagic(enabled, btn) {
         document.body.classList.toggle(MAGIC_CLASS, enabled);
         if (!btn) return;
+        btn.classList.toggle("is-active", enabled);
         btn.setAttribute("aria-pressed", String(enabled));
         btn.setAttribute(
             "aria-label",
@@ -30,8 +31,8 @@
         );
         btn.title = enabled ? "Magic Show: ON" : "Magic Show: OFF";
         btn.innerHTML = enabled
-            ? '<i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>'
-            : '<i class="fa-regular fa-star" aria-hidden="true"></i>';
+            ? '<i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i><span class="magic-toggle-label">Magic ON</span>'
+            : '<i class="fa-regular fa-star" aria-hidden="true"></i><span class="magic-toggle-label">Magic OFF</span>';
     }
 
     function showHint(btn) {
@@ -39,7 +40,7 @@
         const hint = document.createElement("div");
         hint.className = "magic-hint";
         hint.id = "magicHint";
-        hint.textContent = "Click magic icon for IT show mode";
+        hint.textContent = "Magic show is live. Tap toggle to switch.";
         document.body.appendChild(hint);
 
         const hide = () => {
@@ -68,7 +69,11 @@
         magicBtn.className = "magic-toggle";
         magicBtn.id = "magic-toggle";
 
-        const initial = readLocal(STORAGE_KEY, "0") === "1";
+        const stored = readLocal(STORAGE_KEY, "");
+        const initial = stored === "" ? true : stored === "1";
+        if (stored === "") {
+            writeLocal(STORAGE_KEY, "1");
+        }
         applyMagic(initial, magicBtn);
 
         magicBtn.addEventListener("click", () => {

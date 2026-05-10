@@ -89,15 +89,18 @@ header.site-header {
 }
 
 .magic-toggle {
-    width: 40px;
+    width: auto;
+    min-width: 40px;
     height: 40px;
     border-radius: 999px;
     border: 1px solid rgba(15, 23, 42, 0.12);
-    background: linear-gradient(165deg, #ffffff 0%, #f5f3ff 100%);
+    background: linear-gradient(165deg, #ffffff 0%, #eef2ff 40%, #f5f3ff 100%);
     color: #4c1d95;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 7px;
+    padding: 0 12px;
     cursor: pointer;
     box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
@@ -111,6 +114,27 @@ header.site-header {
 .magic-toggle:focus-visible {
     outline: 2px solid rgba(147, 51, 234, 0.45);
     outline-offset: 2px;
+}
+
+.magic-toggle-label {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+}
+
+.magic-toggle.is-active {
+    background: linear-gradient(165deg, #22d3ee 0%, #14b8a6 48%, #0ea5a4 100%);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow:
+        0 6px 18px rgba(20, 184, 166, 0.45),
+        0 0 0 1px rgba(34, 211, 238, 0.25);
+    animation: magicTogglePulse 2.2s ease-in-out infinite;
+}
+
+@keyframes magicTogglePulse {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-1px) scale(1.03); }
 }
 
 .magic-hint {
@@ -150,15 +174,15 @@ header.site-header {
 
 @keyframes magicNavDance {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-2px); }
+    50% { transform: translateY(-4px); }
 }
 
 body.magic-on header.site-header {
-    animation: magicHeaderGlow 3.8s ease-in-out infinite;
+    animation: magicHeaderGlow 2.8s ease-in-out infinite;
 }
 
 body.magic-on header nav a:not(.cta-button) {
-    animation: magicNavDance 2.8s ease-in-out infinite;
+    animation: magicNavDance 2.1s ease-in-out infinite;
 }
 
 body.magic-on header nav a:not(.cta-button):nth-child(2n) {
@@ -167,6 +191,27 @@ body.magic-on header nav a:not(.cta-button):nth-child(2n) {
 
 body.magic-on .logo-link {
     filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.35));
+}
+
+body.magic-on .hero-content h1,
+body.magic-on .hero-content h2,
+body.magic-on .hero-content .tagline {
+    animation-duration: 3.8s;
+}
+
+body.magic-on .main-cta {
+    animation: musicPulseSoft 2.2s ease-in-out infinite;
+}
+
+body.magic-on .trust-logos-track {
+    animation-duration: 18s;
+}
+
+body.magic-on .service-card,
+body.magic-on .partner-showcase-card,
+body.magic-on .pro-service-card,
+body.magic-on .product-showcase-card {
+    animation: musicFloatCard 4.8s ease-in-out infinite;
 }
 
 .ambient-player {
