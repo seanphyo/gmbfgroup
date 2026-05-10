@@ -663,6 +663,217 @@ header nav a[aria-current="page"]:not(.cta-button)::before {
     border-color: var(--color-accent);
 }
 
+/* Clients showcase grid — category cards */
+.partners-section--showcase .partners-section-intro {
+    max-width: 760px;
+    margin: 14px auto 0;
+    text-align: center;
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+.partners-section-intro--clients-page {
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.partners-showcase-grid {
+    display: grid;
+    gap: 22px;
+    margin-top: 32px;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .partners-showcase-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1100px) {
+    .partners-showcase-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .partner-showcase-card--fullwidth {
+        grid-column: 1 / -1;
+    }
+}
+
+.partner-showcase-card {
+    position: relative;
+    padding: 26px 22px 28px;
+    border-radius: 16px;
+    background: linear-gradient(
+        165deg,
+        #ffffff 0%,
+        #f8fafc 48%,
+        #f1f5f9 100%
+    );
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    box-shadow:
+        0 4px 6px rgba(15, 23, 42, 0.04),
+        0 18px 40px rgba(15, 23, 42, 0.06);
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
+    overflow: hidden;
+}
+
+.partner-showcase-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 16px 16px 0 0;
+    opacity: 0.95;
+}
+
+.partner-showcase-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(59, 130, 246, 0.35);
+    box-shadow:
+        0 12px 24px rgba(15, 23, 42, 0.08),
+        0 28px 56px rgba(15, 23, 42, 0.1);
+}
+
+.partner-showcase-card--bus::before {
+    background: linear-gradient(90deg, #2563eb, #38bdf8, #7dd3fc);
+}
+
+.partner-showcase-card--cargo::before {
+    background: linear-gradient(90deg, #c2410c, #ea580c, #fb923c);
+}
+
+.partner-showcase-card--commerce::before {
+    background: linear-gradient(90deg, #047857, #10b981, #6ee7b7);
+}
+
+.partner-showcase-card--ai::before {
+    background: linear-gradient(90deg, #6d28d9, #a855f7, #e879f9);
+}
+
+.partner-showcase-card--payments::before {
+    background: linear-gradient(90deg, #0f172a, #334155, #64748b);
+}
+
+.partner-showcase-card--rewards::before {
+    background: linear-gradient(90deg, #be185d, #ec4899, #f9a8d4);
+}
+
+.partner-showcase-card h4 {
+    text-align: center;
+    font-size: 1.22rem;
+    color: var(--color-primary);
+    margin: 0 0 10px;
+    letter-spacing: -0.02em;
+}
+
+.partner-showcase-desc {
+    text-align: center;
+    margin: 0 0 18px;
+    font-size: 0.92rem;
+    color: #64748b;
+    line-height: 1.45;
+}
+
+.partner-showcase-card .logo-grid {
+    justify-content: center;
+}
+
+.partner-showcase-card .logo-badge:not(.payment-badge) {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.partner-showcase-card a:hover .logo-badge:not(.payment-badge) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+}
+
+.logo-badge--more {
+    font-weight: 700;
+    font-style: normal;
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%);
+    border-color: rgba(245, 158, 11, 0.55);
+    color: #92400e;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        0 4px 14px rgba(245, 158, 11, 0.22);
+}
+
+.logo-badge--more:hover {
+    background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 100%);
+    color: #78350f;
+    border-color: rgba(217, 119, 6, 0.65);
+    cursor: default;
+}
+
+.partner-hsubuu-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.partner-hsubuu-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 24px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #ffffff 0%, #fdf2f8 100%);
+    border: 1px solid rgba(236, 72, 153, 0.28);
+    box-shadow:
+        0 6px 20px rgba(15, 23, 42, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.partner-hsubuu-link:hover {
+    transform: translateY(-4px);
+    border-color: rgba(236, 72, 153, 0.45);
+    box-shadow:
+        0 14px 32px rgba(236, 72, 153, 0.18),
+        0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+.partner-hsubuu-logo {
+    width: min(200px, 62vw);
+    height: auto;
+    display: block;
+}
+
+.partner-hsubuu-site {
+    margin: 0;
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.partner-hsubuu-site a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+.partner-hsubuu-site a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.partner-showcase-card--fullwidth .payment-logos {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .products-highlight {
     padding-top: 0;
 }
