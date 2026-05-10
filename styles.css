@@ -166,7 +166,6 @@ header nav a:nth-child(3) { animation-delay: 0.12s; }
 header nav a:nth-child(4) { animation-delay: 0.16s; }
 header nav a:nth-child(5) { animation-delay: 0.20s; }
 header nav a:nth-child(6) { animation-delay: 0.24s; }
-header nav a:nth-child(7) { animation-delay: 0.28s; }
 
 /* Text links: stable baseline (no hover lift), soft glass hover — enterprise / IT aesthetic */
 header nav a:not(.cta-button) {
@@ -1559,6 +1558,15 @@ header nav a[aria-current="page"]:not(.cta-button)::before {
 
 .zoho-standalone-hero {
     padding-bottom: 24px;
+}
+
+.zoho-cross-lead {
+    max-width: 720px;
+    margin: 14px auto 0;
+    text-align: center;
+    color: #555;
+    font-size: 0.98em;
+    line-height: 1.55;
 }
 
 .zoho-detail-grid {
