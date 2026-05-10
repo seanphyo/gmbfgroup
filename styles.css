@@ -166,6 +166,7 @@ header nav a:nth-child(3) { animation-delay: 0.12s; }
 header nav a:nth-child(4) { animation-delay: 0.16s; }
 header nav a:nth-child(5) { animation-delay: 0.20s; }
 header nav a:nth-child(6) { animation-delay: 0.24s; }
+header nav a:nth-child(7) { animation-delay: 0.28s; }
 
 /* Text links: stable baseline (no hover lift), soft glass hover — enterprise / IT aesthetic */
 header nav a:not(.cta-button) {
@@ -1481,6 +1482,147 @@ header nav a[aria-current="page"]:not(.cta-button)::before {
 .clients-home-link a:hover {
     text-decoration: underline;
     color: var(--color-accent);
+}
+
+/* === Zoho Finance partner (clients page + standalone) === */
+.zoho-partner-highlight {
+    background: linear-gradient(180deg, #eef6fb 0%, #ffffff 55%);
+    border-radius: 16px;
+    border: 1px solid #dce8f3;
+}
+
+.zoho-partner-card {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(280px, 1.25fr);
+    gap: 32px;
+    align-items: center;
+}
+
+.zoho-partner-logo-wrap {
+    background: #0f172a;
+    border-radius: 14px;
+    padding: 28px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.zoho-partner-logo-wrap img {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+}
+
+.zoho-partner-copy .clients-page-section-title {
+    font-size: 1.65em;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.zoho-partner-copy p {
+    color: #444;
+    line-height: 1.65;
+    margin: 0 0 14px;
+    font-size: 1.02em;
+}
+
+.zoho-partner-copy p:last-of-type {
+    margin-bottom: 22px;
+}
+
+.zoho-partner-cta {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 12px 22px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--color-white);
+    background: linear-gradient(165deg, #14c896 0%, var(--color-secondary) 45%, #0ea876 100%);
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 4px 14px rgba(19, 184, 132, 0.35);
+    transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.zoho-partner-cta:hover {
+    box-shadow: 0 8px 22px rgba(19, 184, 132, 0.4);
+    transform: translateY(-1px);
+    color: var(--color-white);
+}
+
+.zoho-standalone-page {
+    background-color: var(--color-white);
+}
+
+.zoho-standalone-hero {
+    padding-bottom: 24px;
+}
+
+.zoho-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    margin-top: 8px;
+}
+
+.zoho-detail-card {
+    background: var(--color-light);
+    border-radius: 12px;
+    padding: 22px 22px 20px;
+    border: 1px solid #e8edf5;
+}
+
+.zoho-detail-card h3 {
+    font-size: 1.15em;
+    color: var(--color-primary);
+    margin: 0 0 10px;
+    text-align: left;
+}
+
+.zoho-detail-card p {
+    margin: 0;
+    color: #555;
+    font-size: 0.96em;
+    line-height: 1.55;
+}
+
+.zoho-legal-note {
+    font-size: 0.88em;
+    color: #666;
+    margin-top: 28px;
+    line-height: 1.5;
+}
+
+.zoho-legal-note a {
+    color: var(--color-secondary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.zoho-legal-note a:hover {
+    text-decoration: underline;
+    color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .zoho-partner-card {
+        grid-template-columns: 1fr;
+    }
+
+    .zoho-partner-copy .clients-page-section-title {
+        text-align: center;
+    }
+
+    .zoho-partner-copy {
+        text-align: center;
+    }
+
+    .zoho-partner-logo-wrap {
+        padding: 22px 18px;
+    }
 }
 
 footer {
