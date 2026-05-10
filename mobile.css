@@ -138,6 +138,18 @@
         gap: 10px;
     }
 
+    .hero-live-strip {
+        margin-top: -8px;
+        margin-bottom: 20px;
+        gap: 8px;
+        max-width: 340px;
+    }
+
+    .hero-live-pill {
+        font-size: 0.76rem;
+        padding: 7px 10px;
+    }
+
     .main-cta {
         width: 100%;
         box-sizing: border-box;
