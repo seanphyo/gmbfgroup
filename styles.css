@@ -160,6 +160,28 @@ header nav a {
     z-index: 1;
 }
 
+header nav a .nav-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.45rem;
+    height: 1.45rem;
+    font-size: 0.72rem;
+    margin-right: 8px;
+    opacity: 0.9;
+    border-radius: 999px;
+    color: #0f766e;
+    background: linear-gradient(155deg, rgba(16, 185, 129, 0.14) 0%, rgba(16, 185, 129, 0.07) 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition: transform 0.28s ease, color 0.28s ease, opacity 0.28s ease;
+    transform-origin: center;
+}
+
+header nav a .nav-label {
+    display: inline-block;
+    white-space: nowrap;
+}
+
 header nav a:nth-child(1) { animation-delay: 0.04s; }
 header nav a:nth-child(2) { animation-delay: 0.08s; }
 header nav a:nth-child(3) { animation-delay: 0.12s; }
@@ -224,6 +246,14 @@ header nav a:not(.cta-button):focus-visible {
     color: #0f172a;
 }
 
+header nav a:not(.cta-button):hover .nav-icon,
+header nav a:not(.cta-button):focus-visible .nav-icon {
+    opacity: 1;
+    transform: translateY(-1px) scale(1.08);
+    color: #065f46;
+    animation: navIconPulse 0.85s ease;
+}
+
 header nav a:not(.cta-button):focus-visible {
     outline: 2px solid rgba(19, 184, 132, 0.45);
     outline-offset: 2px;
@@ -271,6 +301,51 @@ header nav a[aria-current="page"]:not(.cta-button)::before {
         background 0.35s ease,
         box-shadow 0.35s ease,
         transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-button .nav-icon {
+    margin-right: 8px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: none;
+}
+
+@media (max-width: 1240px) {
+    header nav {
+        gap: 2px;
+    }
+
+    header nav a {
+        font-size: 0.86rem;
+    }
+
+    header nav a:not(.cta-button) {
+        padding: 9px 10px;
+    }
+
+    .cta-button {
+        padding: 9px 14px;
+    }
+
+    header nav a .nav-icon {
+        margin-right: 6px;
+    }
+}
+
+@media (max-width: 1090px) {
+    header nav a .nav-icon {
+        display: none;
+    }
+
+    .cta-button {
+        padding: 9px 12px;
+    }
+}
+
+@keyframes navIconPulse {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.15); }
+    100% { transform: scale(1.08); }
 }
 
 .cta-button:hover {
@@ -1283,12 +1358,51 @@ header nav a[aria-current="page"]:not(.cta-button)::before {
     padding: 26px 24px;
     border: 1px solid #e5eaf3;
     box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
-    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+    transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
 .sector-card:hover {
     box-shadow: 0 10px 26px rgba(15, 23, 42, 0.1);
     border-color: rgba(19, 184, 132, 0.45);
+    transform: translateY(-4px);
+}
+
+.sector-card-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    color: #0f172a;
+    background: linear-gradient(155deg, #ecfeff 0%, #d1fae5 100%);
+    border: 1px solid rgba(19, 184, 132, 0.2);
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sector-card:hover .sector-card-icon {
+    transform: translateY(-2px) scale(1.08);
+    box-shadow: 0 10px 20px rgba(19, 184, 132, 0.18);
+}
+
+.sector-card--travel .sector-card-icon { background: linear-gradient(155deg, #e0f2fe 0%, #cffafe 100%); border-color: rgba(3, 105, 161, 0.2); }
+.sector-card--hospitality .sector-card-icon { background: linear-gradient(155deg, #ecfccb 0%, #dcfce7 100%); border-color: rgba(101, 163, 13, 0.22); }
+.sector-card--events .sector-card-icon { background: linear-gradient(155deg, #ede9fe 0%, #e0e7ff 100%); border-color: rgba(79, 70, 229, 0.22); }
+.sector-card--payments .sector-card-icon { background: linear-gradient(155deg, #fef9c3 0%, #fde68a 100%); border-color: rgba(202, 138, 4, 0.22); }
+.sector-card--cargo .sector-card-icon { background: linear-gradient(155deg, #ffedd5 0%, #fed7aa 100%); border-color: rgba(234, 88, 12, 0.22); }
+.sector-card--ai .sector-card-icon { background: linear-gradient(155deg, #f3e8ff 0%, #fae8ff 100%); border-color: rgba(168, 85, 247, 0.22); }
+.sector-card--astrology .sector-card-icon { background: linear-gradient(155deg, #fce7f3 0%, #fbcfe8 100%); border-color: rgba(236, 72, 153, 0.26); }
+
+@keyframes sectorIconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+}
+
+.sector-card-icon i {
+    animation: sectorIconFloat 2.8s ease-in-out infinite;
 }
 
 .sector-card h3 {
