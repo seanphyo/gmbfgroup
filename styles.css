@@ -45,13 +45,14 @@ h3 {
 /* === 2. HEADER & NAVIGATION (MODERNIZED) === */
 header.site-header {
     padding: 10px 3%;
-    background-color: var(--color-light); /* Slight off-white background */
+    /* Solid header — avoid backdrop-filter here: it creates a containing block in WebKit
+       and breaks position:fixed mobile drawer nav inside the header (clips to header strip). */
+    background-color: var(--color-light);
     border-bottom: 1px solid #eee; /* Subtle border at the bottom */
     box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
     position: sticky;
     top: 0;
     z-index: 100;
-    backdrop-filter: blur(8px);
 }
 
 .header-bar {

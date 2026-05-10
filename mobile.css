@@ -12,18 +12,23 @@
     }
 
     header.site-header.nav-open {
-        z-index: 1000;
+        z-index: 10040;
     }
 
     header nav {
         position: fixed;
         top: 0;
         right: 0;
+        left: auto;
         bottom: 0;
         width: min(320px, 88vw);
         max-width: 100%;
+        min-height: 100vh;
+        min-height: 100dvh;
+        min-height: -webkit-fill-available;
         margin: 0;
-        padding: 76px 16px 28px;
+        padding: max(76px, env(safe-area-inset-top, 0px) + 56px) 16px max(28px, env(safe-area-inset-bottom, 0px) + 16px);
+        display: flex;
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
@@ -31,16 +36,18 @@
         gap: 6px;
         background: #ffffff;
         box-shadow: -16px 0 48px rgba(15, 23, 42, 0.2);
-        transform: translateX(100%);
+        transform: translate3d(100%, 0, 0);
         transition: transform 0.34s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-x: hidden;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
-        z-index: 1001;
+        z-index: 10050;
         border-left: 1px solid #e8edf5;
+        box-sizing: border-box;
     }
 
     body.menu-open header nav {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
 
     header nav a:not(.cta-button) {
@@ -65,7 +72,7 @@
         display: none;
         position: fixed;
         inset: 0;
-        z-index: 999;
+        z-index: 10030;
         margin: 0;
         padding: 0;
         border: none;
