@@ -1949,20 +1949,24 @@ body.theme-night .trust-logos-track span:hover {
 }
 
 .zoho-partner-logo-wrap {
-    background: #0f172a;
+    background: linear-gradient(165deg, #f8fbff 0%, #eef5ff 100%);
+    border: 1px solid #d7e4f4;
     border-radius: 14px;
     padding: 28px 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    box-shadow:
+        0 10px 26px rgba(15, 23, 42, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
 .zoho-partner-logo-wrap img {
     width: 100%;
-    max-width: 520px;
+    max-width: 380px;
     height: auto;
     display: block;
+    filter: drop-shadow(0 3px 10px rgba(15, 23, 42, 0.2));
 }
 
 .zoho-partner-copy .clients-page-section-title {
@@ -2343,6 +2347,18 @@ body.theme-night .logo-badge {
 
 body.theme-night .services-grid {
     background: transparent;
+}
+
+body.theme-night .zoho-partner-logo-wrap {
+    background: linear-gradient(165deg, #f8fbff 0%, #eef5ff 100%);
+    border-color: #d7e4f4;
+    box-shadow:
+        0 10px 26px rgba(2, 6, 23, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+body.theme-night .zoho-partner-logo-wrap img {
+    filter: drop-shadow(0 3px 10px rgba(15, 23, 42, 0.2));
 }
 
 body.theme-night .products-services-page,
