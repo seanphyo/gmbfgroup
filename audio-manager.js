@@ -310,12 +310,13 @@
         try {
             await state.audio.play();
             updatePlayButton(true);
-            updateStatus(`Now playing: ${track.title}`);
             const period = periodFromHour(mmHour());
             const bucket = weatherBucket(state.weatherCode);
-            showToast(
-                `Music is playing according to Myanmar ${periodLabel(period)} and ${weatherLabel(bucket)} weather.`
+            const contextMsg = `Music is playing according to Myanmar ${periodLabel(period)} and ${weatherLabel(bucket)} weather.`;
+            updateStatus(
+                `Now playing: ${track.title}. ${contextMsg}`
             );
+            showToast(contextMsg);
         } catch {
             updatePlayButton(false);
             updateStatus(
